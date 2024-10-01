@@ -1,0 +1,252 @@
+section(title='Méthodologie')
+
+    section(title='Données')
+
+        p.
+            Afin de vérifier les résultats présentés dans #{cite('setragno2017')}, j'ai réalisé des enregistrements sur plusieurs violons en faisant varier les mêmes paramètres à savoir la vitesse d'archet, la force appliquée, et la distance au chevalet. Dans le but de correspondre autant que possibles aux conditions réelles de jeu, je n'ai pas mesuré les niveaux de ces différents paramètres, mais me suis donné des consignes "musicales". Ainsi, une vitesse d'archet lente, avec une force appliquée forte et une distance au chevalet faible se traduit en une note longue, jouée #[i forte] et #[i ponticello]. Chaque paramètre pouvait prendre trois valeurs :
+        ul
+            li Vitesse d'archet $ \in [ \text{lente}, \text{moyenne}, \text{rapide} ]$
+            li Force appliquée  $ \in [ \text{piano}, \text{mezzo}, \text{forte} ]$
+            li Distance au chevalet  $ \in [ \text{ponticello}, \text{ordinario}, \text{sul tasto} ]$
+
+        p.
+            12 enregistrements de ces 27 combinaisons possibles ont été réalisés sur une note tenue (plus précisément, une corde de ré à vide). Ces enregistrements ont été réalisés avec une fréquence d’échantillonnage de 44.1Hz, dans une pièce peu réverbérante, et sur plusieurs jours afin d'introduire une certaine variabilité dûe au violoniste.
+
+    section(title='Descripteurs audio')
+        style.
+            .desc tr th:last-child, .desc tr td:last-child {
+                display: none;
+            }
+        table.desc(style='font-size:0.8em;')
+            caption Liste des descripteurs utilisés
+            tr
+                th Type
+                th Nom
+                th Description
+                th Formule
+                th Utilisé dans
+            tr
+                td Temporelle
+                td Attack
+                td Durée de l'attaque d'une note
+                td $$ t_{ \text{attack end} } - t_{ \text{attack start} } $$
+                td
+            tr
+                td Temporelle
+                td Attack slope
+                td Durée de l'attaque d'une note
+                td $$ t_{ \text{attack end} } - t_{ \text{attack start} } $$
+                td
+            tr
+                td Temporelle
+                td Decrease slope
+                td Durée de l'attaque d'une note
+                td $$ t_{ \text{attack end} } - t_{ \text{attack start} } $$
+                td
+            tr
+                td Temporelle
+                td Log-attack
+                td Logarithme de la durée de l'attaque d'une note
+                td $$ \log \left( t_{ \text{attack end} } - t_{ \text{attack start} } \right) $$
+                td
+            tr
+                td Temporelle
+                td Duration
+                td Durée de la note
+                td $$ t_{\text{end} } - t_{ \text{start} } $$
+                td
+            tr
+                td Temporelle
+                td RMS
+                td Quantifie le volume d'un signal sonore
+                td $$ RMS[m] \coloneqq \frac{1}{W} \sum_{k=mW}^{(m+1)W} x[k]^2  $$
+                td
+            tr
+                td Temporelle
+                td ZCR
+                td Nombre de fois que le signal passe par $0$. Quantifie l'harmonicité.
+                //- td $$ ZCR[m] \coloneqq \frac{1}{W} \sum_{k=mW}^{(m+1)W} |\mathrm{sgn}(x[k]) - \mathrm{sgn}(x[k-1])|
+                td $$ ZCR[m] \coloneqq \frac{1}{W} \sum_{k=mW}^{(m+1)W} \mathbb{1}_{&lt;0} x[k]x[k-1] $$
+                td
+        break
+        table.desc(style='font-size:0.8em;')
+            tr
+                th Type
+                th Nom
+                th Description
+                th Formule
+                th Utilisé dans
+            tr
+                td Temporelle
+                td Temporal Centroid
+                td Représente le centre de gravité temporel d'une note
+                td.
+                    $$ 
+                        \mu \coloneqq
+                            \frac{
+                                \sum_{n=n_1}^{n_2} t[n] RMS[n]
+                            }{
+                                \sum_{n=n_1}^{n_2} RMS[n]
+                            }
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Centroid
+                td Représente le centre de gravité du spectre
+                td.
+                    $$ 
+                        \mu_1[n] \coloneqq
+                            \frac{
+                                \sum_{k=k_1}^{k_2} f[k] S[k, n]
+                            }{
+                                \sum_{k=k_1}^{k_2} S[k, n]
+                            }
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Spread
+                td Représente la déviation autour du Spectral Centroid
+                td.
+                    $$ 
+                        \mu_2[n] \coloneqq
+                            \frac{
+                                \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^2 S[k, n]
+                            }{
+                                \sum_{k=k_1}^{k_2} S[k, n]
+                            }
+                    $$ 
+                td
+            tr
+                td Spectral
+                td Spectral Skewness
+                td Quantifie l'asymmétrie du spectre autour du Spectral Centroid
+                td.
+                    $$ 
+                        \mu_3[n] \coloneqq
+                            \frac{
+                                \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^3 S[k, n]
+                            }{
+                                \mu_2^3 \sum_{k=k_1}^{k_2} S[k, n]
+                            }
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Spread
+                td Quantifie le fait que le spectre soit pointu autour du Spectral Centroid
+                td.
+                    $$ 
+                        \mu_4[n] \coloneqq
+                            \frac{
+                                \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^4 S[k, n]
+                            }{
+                                \mu_2^4 \sum_{k=k_1}^{k_2} S[k, n]
+                            }
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Slope
+                td Pente de l'amplitude du spectre vue comme fonction de $f[k]$
+                td.
+                    $$
+                        \alpha \coloneqq 
+                            \frac{
+                                \sum_k (f[k] - \bar{f})(S[k, n] - \bar{S}[n])
+                            }{
+                                \sum_k (f[k] - \bar{f})^2
+                            }
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Decrease
+                td Représente la décroissance du spectre
+                td.
+                    $$
+                        SD \coloneqq
+                            \frac{
+                                \sum_{k=k_1+1}^{k_2} \frac{S[k, n] - S[k_1, n]}{k - k_1}
+                            }{
+                                \sum_{k=k_1}^{k_2} S[k, n]
+                            }
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Rolloff
+                td Bande de fréquence contenant $\alpha \%$ de l'énergie du spectre
+                td.
+                    $$
+                        f[k_{RO}] \text{ tel que } 
+                            \sum_{k=k_1}^{k_{RO}} S[k, n] = \alpha \sum_{k=k_1}^{k_2} S[k, n]
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Variation
+                td Mesure la variation entre deux trames successives d'un spectre
+                td.
+                    $$
+                        SV \coloneqq 
+                            1 - \frac{
+                                \sum_{k} S[k, n-1]S[k, n] 
+                            }{
+                                \sqrt{\sum_k S[k, n-1]^2}
+                                \sqrt{\sum_k S[k, n]^2}
+                            }
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Flux
+                td Quantifie le fait que le spectre soit pointu autour du Spectral Centroid
+                td.
+                    $$ 
+                        \mu_4[n] \coloneqq
+                            \frac{
+                                \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^4 S[k, n]
+                            }{
+                                \mu_2^4 \sum_{k=k_1}^{k_2} S[k, n]
+                            }
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Flatness
+                td Quantifie le fait que le spectre soit pointu autour du Spectral Centroid
+                td.
+                    $$ 
+                        \mu_4[n] \coloneqq
+                            \frac{
+                                \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^4 S[k, n]
+                            }{
+                                \mu_2^4 \sum_{k=k_1}^{k_2} S[k, n]
+                            }
+                    $$
+                td
+            tr
+                td Spectral
+                td Spectral Crest
+                td Quantifie le fait que le spectre soit pointu autour du Spectral Centroid
+                td.
+                    $$ 
+                        \mu_4[n] \coloneqq
+                            \frac{
+                                \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^4 S[k, n]
+                            }{
+                                \mu_2^4 \sum_{k=k_1}^{k_2} S[k, n]
+                            }
+                    $$
+                td
+
+    section(title='Test statistique')
+
+        p.
+            Afin de savoir quels descripteurs décrivent le mieux les changements de paramètres de jeu, un algorithme de sélection des meilleurs descripteurs est appliqué. Cet algorithme, issu de la bibliothèque #[i scikit-learn] #{cite('pedregosa2011')} de Python, calcule un test d'analyse de variance (ANOVA) permettant de savoir quels descripteurs permettent de séparer au mieux différents niveaux d'un paramètre de jeu. Pour chaque paramètre de jeu, les meilleurs descripteurs sont ainsi obtenus.
+
+        //- Développer ANOVA ?
+
+

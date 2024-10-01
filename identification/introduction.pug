@@ -1,0 +1,15 @@
+section(title='Introduction')
+    
+    //- Introduce topic
+    //- Background
+    //- Problem
+    //- Objectives
+    //- Map
+
+    p L'identification d'instruments de musique est une tâche commune en #[i Music Information Retrieval] (MIR). Elle consiste à retrouver l'ensemble des instruments présents dans un enregistrement. C'est un problème qui a été longuement étudié, et, pour des enregistrements monophoniques (constitués d'un seul instrument), les modèles actuels permettent d'obtenir une précision de l'ordre de 100%.
+
+    p Cependant, peu d'articles se sont intéressés à l'identification d'instruments au sein d'une même famille, comme par exemple l'identification de violons à partir de leur enregistrement. Les rares articles s'y étant intéressés utilisent la plupart du temps des enregistrements réalisés par une seule personne #{cite('yokoyama2022a')}, ce qui enlève de la variabilité dûe au violoniste.
+
+    p Le but de cette étude est de passer en revue et de comparer différentes façons d'aborder ce problème, depuis la collection et l'exploration des données jusqu'aux différents algorithmes permettant de faire cette classification. Des conseils sur la manière de réaliser les enregistrements seront donnés et une version à temps long des MFCCs sera introduite.
+
+    p Cette partie est structurée comme suit : la section 3.2 présente la méthodologie générale, décrivant la collecte des données, l'extraction des descripteurs audio, leur exploration et enfin la classification à l'aide de méthodes d'apprentissage automatique. Les résultats sont discutés dans la section 3.3. Enfin, des conclusions sont tirées dans la section 3.4, qui esquisse également d'éventuels développements futurs.

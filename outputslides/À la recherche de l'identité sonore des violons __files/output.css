@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+    --r-main-font: "EB Garamond";
+    /* --r-main-font: "Cormorant Garamond"; */
+    --r-heading-font: "EB Garamond";
+    /* --r-heading-font: "Cormorant Garamond"; */
+    --r-main-font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.reveal {
+    font-family: "EB Garamond";
+    font-weight: 300;
+    line-height: 1.5;
+
+    h1, h2, h3, h4, p {
+        text-transform: none;
+    }
+
+    li {
+        line-height: 2;
+    }
+
+    pre {
+        font-size: 1em;
+        code {
+            max-height: none;
+        }
+    }
+
+    img, svg {
+        max-width: 70%;
+        max-height: 100vh;
+    }
+
+    table td {
+        text-align: center;
+    }
+
+    .slides section {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+
+        & main {
+            max-width: 60%;
+            margin: 0 auto;
+        }
+    }
+
+}
+
+.present :is(h1, h2, h3) svg text {
+	text-transform: normal;
+	animation: strokee 3s linear forwards, fill 2s linear  1s forwards;
+	stroke-width: .5;
+	stroke: black;
+    fill: white;
+    stroke-dashoffset: 300px;
+    stroke-dasharray: 300px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@keyframes fill {
+    100% {
+        fill: black;
+    }
+}
+
+@keyframes strokee {
+    100% {
+        stroke-dashoffset: 0px;
+    }
+}
+
+@keyframes stroke {
+	0%   {
+		fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1); }
+	80%  {fill: rgba(72,138,20,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
+	100% {
+		fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0); 
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+
+.present svg #axes_1 > g:nth-child(n+2):nth-child(-n+25) {
+    transform: scale(1, 0);
+    transform-origin: 50% 100%;
+    transform-box: fill-box;
+    animation: grow 1s forwards;
+}
+.present svg #axes_4 > g:nth-child(n+2):nth-child(-n+14) {
+    transform: scale(0, 1);
+    transform-origin: 0% 50%;
+    transform-box: fill-box;
+    animation: grow 1s forwards;
+}
+
+.present .ltas #axes_1 > g:nth-child(n+1):nth-child(-n+600){
+    transform: scale(1, 0);
+    transform-origin: 50% 100%;
+    transform-box: fill-box;
+    animation: grow 1s forwards;
+}
+
+.present .ltas #axes_1 > g[id^=PolyCollection] {
+    /* transform: scale(1, 0);
+    transform-origin: 50% 50%;
+    /* transform-box: fill-box; */
+    animation: grow 1s forwards; */
+} 
+
+.present svg image {
+    /* filter: blur(50px); */
+    /* animation: bri 2s forwards; */
+}
+
+@keyframes bri {
+    to {
+        filter: blur(0);
+    }
+}
+
+@keyframes grow {
+    to {
+        transform: scale(1, 1);
+    }
+}

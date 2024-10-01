@@ -1,0 +1,47 @@
+section(title='Segmentation automatique')
+
+    p Le but de cette annexe est de présenter un algorithme simple (mais en pratique assez efficace) permettant de découper automatiquement un enregistrement contenant plusieurs extraits musicaux. Ceci est utile lors du traitement d'enregistrements issus d'une expérience où pour des raisons de temps il n'est pas possible d'arrêter et de relancer sans arrêt les enregistrements. Les données prennent alors la forme de plusieurs dizaines de minutes d'enregistrement, parmi lesquelles seuls les extraits contenant du violon nous intéressent.
+
+    p L'idée est tout simplement de modéliser un extrait joué au violon comme un signal ayant un volume fort et maintenu dans le temps. L'algorithme se découpe alors en trois étapes :
+
+    ol 
+        li le calcul de l'enveloppe du signal (modélisant le volume)
+        li le calcul d'un seuil adapté (permettant de différencier les moments de silence / conversation des moments où un violon est joué)
+        li le prolongement de ce seuillage afin d'obtenir des extraits suffisamment bien découpés
+
+    figure 
+        figcaption 
+        img(src="figures/segmentation.png", alt="", srcset="")
+
+    section(title='Enveloppe')
+
+        p L'enveloppe est calculé via le calcul de la RMS du signal, avec une fenêtre assez large afin de lisser le résultat
+
+        figure 
+            figcaption 
+            img(src="figures/envelope.png", alt="", srcset="")
+
+    section(title='Seuillage')
+
+        p Afin de trouver automatiquement un seuil permettant de faire la différence entre un bruit de fond et un son de violon, l'histogramme des valeurs de la RMS du signal est analysé. Nous faisons ensuite l'hypothèse qu'il peut être décrit comme une somme de deux gaussiennes : une correspondant au bruit de fond (prenant des valeurs d'énergie moins élevées), une autre correspondant au son du violon (valeurs plus élevées).
+
+        figure 
+            figcaption 
+            img(src="figures/thres.png", alt="", srcset="")
+
+        p Le seuil est alors choisi comme la moyenne entre les moyennes de ces gaussiennes.
+
+        figure 
+            figcaption 
+            img(src="figures/thres_2.png", alt="", srcset="")
+
+    section(title='Prolongement et contraintes')
+
+        p Enfin, afin d'éviter que les extraits ne soient découpés trop abruptement, un prolongement est effectué à gauche et à droite de chaque extrait (tant que la dérivée de change pas de signe).
+
+        figure 
+            figcaption 
+            img(src="figures/prol.png", alt="", srcset="")
+
+        p Les extraits trop courts sont éliminés, et deux extraits séparés par un temps inférieur à un certain paramètre sont fusionnés.
+

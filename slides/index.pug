@@ -1,0 +1,246 @@
+section(title="À la recherche de l'identité sonore des violons :")
+    link(rel="stylesheet", href="styles.css")
+
+    h2.light influences respectives de l'instrument et de l'instrumentiste
+    h4.light Hugo Pauget Ballesteros, Claudia Fritz, Philippe Lalitte
+    figure.logos
+        div
+            img(src='../figures/logo_collegiumMusicae.png' alt='')
+        div
+            img(src='../figures/iremus-logo-noir-et-couleur.jpg' alt='')
+        div 
+            img(src='../figures/Logo_dAlembert.png' alt='')
+
+    mixin card(src, title, desc, date)
+        div.card
+            img(src=src, alt="", srcset="")
+            div
+                p.title= title
+                p.small= desc
+                p.date= date
+
+    section(title='Enseignements')
+        div
+            +card('../figures/polytech.svg', 'CME', 'Ondes mécaniques, Traitement du Signal')
+            +card('../figures/n7.png', 'Vacataire', 'Traitement des Données Audiovisuelles')
+        
+    section(title='Formations et conférences')
+        div
+            +card('../figures/villefavard.webp', 'Villefavard', 'séminaire autour du violon', 'octobre 2023')
+            +card('../figures/logo_collegiumMusicae.png', 'MuHAS', 'séminaire en musicologie', 'novembre 2023')
+            +card('../figures/jjcaas.png', 'JJCAAS', 'conférence en acoustique', 'mars 2024')
+            +card('../figures/cism.svg', 'CISM', 'séminaire en acoustique musicale', 'mai 2024')
+            +card('../figures/villefavard.webp', 'Villefavard', 'séminaire autour du violon', 'juin 2024')
+
+    section(title='Introduction')
+        include ../figures/introduction2.svg
+        //- img(src="../figures/introduction.svg", alt="", srcset="" style='max-width: 150%')
+
+    section(title='Influence des paramètres de jeu sur certains descripteurs audio')
+
+        section(title='Introduction')
+            p #[b But :] Quantifier à quel point il est possible d'identifier certains paramètres de jeu à partir d'enregistrements audio
+            footer.fragment
+                ul
+                    li Schoonderwaldt, “The Violinist’s Sound Palette.”
+        
+        section(title='Méthodologie')
+            ul
+                li.fragment Étude de l'influence de 3 paramètres sur des notes tenues #[span.small (cordes à vide)]:
+                    ul
+                        li.fragment Vitesse d'archet #[span.small (lente, moyenne, rapide)]
+                        li.fragment Nuance #[span.small (piano, mezzo, forte)]
+                        li.fragment Distance au chevalet #[span.small (ponticello, ordinario, sul tasto)]    
+                li.fragment 12 enregistrements de ces 27 combinaisons possibles
+                    audio(controls src="/home/hugo/Thèse/segmentation/processed/V1F1D1T1.wav")
+                    audio(controls src="/home/hugo/Thèse/segmentation/processed/V3F3D3T1.wav")
+                li.fragment Extraction des descripteurs audio
+                li.fragment Test statistique #[span.small (ANOVA F-value)] : quels descripteurs sont influencés par le mode de jeu
+
+            footer.fragment
+                ul
+                    li Peeters et al., “The Timbre Toolbox.”
+
+        section(title='Résultats')
+            section(title='Vitesse d\'archet')
+                figure 
+                    img(src="../figures/best_params_V.png", alt="")
+                    figcaption Influence de la vitesse d'archet
+            
+            section(title='Force / Nuance')
+                figure 
+                    img(src="../figures/best_params_F.png", alt="")
+                    figcaption Influence de la force / nuance
+            
+            section(title='Distance au chevalet')
+                figure 
+                    img(src="../figures/best_params_D.png", alt="")
+                    figcaption Influence de la distance au chevalet
+
+        section(title='Conclusion')
+            ul
+                li.fragment Il semble plus simple de distinguer plusieurs niveaux de vitesse d'archet
+                li.fragment Vitesse d'archet : descripteurs temporels
+                li.fragment Force / Nuance et distance au chevalet : descripteurs spectraux
+                li.fragment Étude de la partie stable de la note ? Possibilité d'identifier les paramètres de jeu via ces descripteurs ?
+
+    section(title='Identification individuelle de violon par leur son')
+
+        section(title='Introduction')
+            ul
+                li.fragment Identification des catégorie d'instruments #[span.light (violon vs. trompette)] : beaucoup étudié
+                li.fragment Identification individuelle #[span.light (violon A vs. violon B)] : plus dur, moins étudié
+                li.fragment Chaque violon possède-t-il un “son propre”, indépendant du violoniste ?
+
+        section(title='Méthodologie')
+            ul
+                li.fragment Base de données
+                    ul
+                        li.fragment 13 violons (projet Bilbao)
+                        li.fragment 27 interprètes
+                        li.fragment 
+                            audio(controls src="/home/hugo/Thèse/Data/BilbaoViolins/Violin_scale_segementation/PLAYER1/Violin1.wav")
+                            audio(controls src="/home/hugo/Thèse/Data/BilbaoViolins/Recordings_FreeCat/PLAYER1/cut_player1_violin7.wav")
+                li.fragment Descripteurs
+                    ul
+                        li.fragment LTAS
+                        li.fragment LTAS, third-band octave
+                        li.fragment MFCC
+                        li.fragment LTCC
+                li.fragment Classifieurs
+                    ul
+                        li.fragment K-NN
+                        li.fragment SVM
+                        li.fragment MLP
+
+            footer.fragment
+                ul
+                    li Lukasik, “Long Term Cepstral Coefficients for Violin Identification.”
+        section(title='Résultats')
+            table(style='width:100%')
+                caption $\mathcal{D}_{\text{entraînement}}$ = gammes, $\mathcal{D}_{\text{test}}$ = extraits musicaux
+                thead
+                    tr
+                        th Méthode
+                        th Descripteur
+                        th Entraînement
+                        th Test
+                tbody
+                        tr
+                            td(rowspan="3") K-NN
+                            td LTAS
+                            td 100%
+                            td 66%
+                        tr
+                            td LTCC
+                            td 100%
+                            td 66%
+                        tr
+                            td MFCC
+                            td 100%
+                            td #[b 95%]
+                        tr
+                            td(rowspan="3") SVM
+                            td LTAS
+                            td 99%
+                            td 83%
+                        tr
+                            td LTCC
+                            td 99%
+                            td #[b 100%]
+                        tr
+                            td MFCC
+                            td 98%
+                            td 92%
+                        tr
+                            td(rowspan="3") MLP
+                            td LTAS
+                            td 38%
+                            td 54%
+                        tr
+                            td LTCC
+                            td 99%
+                            td 83%
+                        tr
+                            td MFCC
+                            td 99%
+                            td #[b 92%]
+        section(title='Conclusion')
+            ul
+                li.fragment Revue de différents descripteurs et méthodes de classification
+                li.fragment MFCCs et LTCCs semblent adaptés
+                li.fragment Lien avec la perception humaine ?
+
+    section(title='Influence du jeu sur l\'identité sonore d\'un violon')
+
+        section(title='Introduction')
+            ul
+                li.fragment Violonistes et luthiers : le son d'un violon peut s'ouvrir grâce au jeu
+                li.fragment Cependant, aucune étude permettant de l'affirmer
+                li.fragment Quelle influence du jeu : le violon change-t-il et/ou le violoniste s'adapte-t-il ?
+                li.fragment Expérience au CNSMDP, co-organisée avec Julien Dubois et avec la participation de Stéphanie-Marie Degand. 
+
+            footer.fragment
+                ul
+                    li Inta, Smith, and Wolfe, “Measurement of the Effect on Violins of Ageing and Playing.”
+        
+        section(title='Méthodologie')
+            include /home/hugo/Thèse/CSI/figures/exp.svg
+            //- img(src="../figures/exp.svg")
+            //- ul
+            //-     li.fragment 3 violons (1 test + 2 de contrôle)
+            //-     li.fragment 10aine de violonistes (1 test + 11 de contrôle)
+
+            //- table.small
+            //-     thead
+            //-         tr
+            //-             th Condition
+            //-             th Déroulé de chaque session
+            //-             th Durée (min)
+            //-     tbody
+            //-         tr
+            //-             td(rowspan=1)
+            //-             td Accueil, explications
+            //-             td 3
+            //-         tr
+            //-             td(rowspan=2) Aveugle
+            //-             td.
+            //-                 Période de familiarisation avec les trois instruments. #[br]
+            //-                 Notation (sur 10) de chaque instrument suivant les trois critères suivants : puissance, facilité de jeu et beauté du timbre.
+            //-             td 15
+            //-         tr
+            //-             td Enregistrements (3 gammes + morceaux du répertoire)
+            //-             td 20
+            //-         tr
+            //-             td(rowspan=2) Non-aveugle
+            //-             td Période de familiarisation avec les deux instruments (cf. ci-dessous). Notation suivant les mêmes critères.
+            //-             td 10
+            //-         tr
+            //-             td Enregistrements (3 gammes + morceaux du répertoire)
+            //-             td 10
+            //-         tr
+            //-             td(rowspan=1) 
+            //-             td Discussions et conclusion
+            //-             td 5
+
+        section(title='En cours')
+            figure.wider(style="display:flex;")
+                img(style='width:50%' src="../figures/violins.jpg", alt="", srcset="")
+                img(style='width:50%' src="../figures/exp.jpg", alt="", srcset="")
+
+
+        section(title='Résultats')
+            div.small
+                include /home/hugo/Thèse/Ouverture par le jeu/notes/anova.html
+                
+        section(title='Conclusion')
+            ul
+                li.fragment Enregistrements en cours de traitement
+                li.fragment Impossible d'affirmer que l'aspect visuel a un impact significatif
+                li.fragment À suivre...
+
+    section(title='Conclusion et perspectives')
+        ul
+            li.fragment Traitement des enregistrements
+            li.fragment Mesures en salle MoCap
+            li.fragment Relier MFCCs aux notes des violonistes ?

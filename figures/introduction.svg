@@ -1,0 +1,231 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg" style="background-color: rgb(255, 255, 255); max-width: 100%"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="805px" height="221px" viewBox="-0.5 -0.5 805 221" content="&lt;mxfile host=&quot;app.diagrams.net&quot; agent=&quot;Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0&quot; version=&quot;24.7.16&quot; scale=&quot;1&quot; border=&quot;0&quot;&gt;&#xA;  &lt;diagram name=&quot;Page-1&quot; id=&quot;6ok0-BHjqDh8COfuKjjm&quot;&gt;&#xA;    &lt;mxGraphModel dx=&quot;876&quot; dy=&quot;484&quot; grid=&quot;1&quot; gridSize=&quot;10&quot; guides=&quot;1&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;1169&quot; pageHeight=&quot;827&quot; math=&quot;0&quot; shadow=&quot;0&quot;&gt;&#xA;      &lt;root&gt;&#xA;        &lt;mxCell id=&quot;0&quot; /&gt;&#xA;        &lt;mxCell id=&quot;1&quot; parent=&quot;0&quot; /&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-13&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;sketch=1;curveFitting=1;jiggle=2;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;7853IceYujah36AVJ1Jo-1&quot; target=&quot;7853IceYujah36AVJ1Jo-9&quot;&gt;&#xA;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-1&quot; value=&quot;Paramètres de jeu&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Garamond;fontSize=20;strokeColor=default;sketch=1;curveFitting=1;jiggle=2;glass=0;shadow=0;sketchStyle=rough;dashGap=-1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&#xA;          &lt;mxGeometry x=&quot;410&quot; y=&quot;130&quot; width=&quot;230&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-11&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;sketch=1;curveFitting=1;jiggle=2;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;7853IceYujah36AVJ1Jo-7&quot; target=&quot;7853IceYujah36AVJ1Jo-8&quot;&gt;&#xA;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-7&quot; value=&quot;&amp;lt;div&amp;gt;Son&amp;lt;/div&amp;gt;&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Garamond;fontSize=20;strokeColor=default;sketch=1;curveFitting=1;jiggle=2;glass=0;shadow=0;sketchStyle=rough;dashGap=-1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&#xA;          &lt;mxGeometry x=&quot;410&quot; y=&quot;289&quot; width=&quot;230&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-12&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;dashed=1;sketch=1;curveFitting=1;jiggle=2;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;7853IceYujah36AVJ1Jo-8&quot; target=&quot;7853IceYujah36AVJ1Jo-1&quot;&gt;&#xA;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-24&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;sketch=1;curveFitting=1;jiggle=2;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;7853IceYujah36AVJ1Jo-8&quot; target=&quot;7853IceYujah36AVJ1Jo-9&quot;&gt;&#xA;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&#xA;            &lt;Array as=&quot;points&quot;&gt;&#xA;              &lt;mxPoint x=&quot;920&quot; y=&quot;130&quot; /&gt;&#xA;              &lt;mxPoint x=&quot;120&quot; y=&quot;130&quot; /&gt;&#xA;            &lt;/Array&gt;&#xA;          &lt;/mxGeometry&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-25&quot; value=&quot;&amp;lt;div&amp;gt;IIIa&amp;lt;/div&amp;gt;&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;7853IceYujah36AVJ1Jo-24&quot;&gt;&#xA;          &lt;mxGeometry x=&quot;0.6714&quot; y=&quot;25&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&#xA;            &lt;mxPoint as=&quot;offset&quot; /&gt;&#xA;          &lt;/mxGeometry&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-8&quot; value=&quot;Violoniste&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Garamond;fontSize=20;strokeColor=default;sketch=1;curveFitting=1;jiggle=2;glass=0;shadow=0;sketchStyle=rough;dashGap=-1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&#xA;          &lt;mxGeometry x=&quot;690&quot; y=&quot;210&quot; width=&quot;230&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-10&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;sketch=1;curveFitting=1;jiggle=2;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;7853IceYujah36AVJ1Jo-9&quot; target=&quot;7853IceYujah36AVJ1Jo-7&quot;&gt;&#xA;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-16&quot; value=&quot;II&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;7853IceYujah36AVJ1Jo-10&quot;&gt;&#xA;          &lt;mxGeometry x=&quot;0.1776&quot; y=&quot;2&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&#xA;            &lt;mxPoint as=&quot;offset&quot; /&gt;&#xA;          &lt;/mxGeometry&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-15&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;sketch=1;curveFitting=1;jiggle=2;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;7853IceYujah36AVJ1Jo-9&quot; target=&quot;7853IceYujah36AVJ1Jo-8&quot;&gt;&#xA;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot; /&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-22&quot; value=&quot;IIIb&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;7853IceYujah36AVJ1Jo-15&quot;&gt;&#xA;          &lt;mxGeometry x=&quot;-0.0171&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&#xA;            &lt;mxPoint as=&quot;offset&quot; /&gt;&#xA;          &lt;/mxGeometry&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-9&quot; value=&quot;Violon&quot; style=&quot;rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontFamily=Garamond;fontSize=20;strokeColor=default;sketch=1;curveFitting=1;jiggle=2;glass=0;shadow=0;sketchStyle=rough;dashGap=-1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;&gt;&#xA;          &lt;mxGeometry x=&quot;120&quot; y=&quot;210&quot; width=&quot;230&quot; height=&quot;60&quot; as=&quot;geometry&quot; /&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-14&quot; style=&quot;edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;sketch=1;curveFitting=1;jiggle=2;&quot; edge=&quot;1&quot; parent=&quot;1&quot; source=&quot;7853IceYujah36AVJ1Jo-1&quot; target=&quot;7853IceYujah36AVJ1Jo-7&quot;&gt;&#xA;          &lt;mxGeometry relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&#xA;            &lt;Array as=&quot;points&quot;&gt;&#xA;              &lt;mxPoint x=&quot;340&quot; y=&quot;190&quot; /&gt;&#xA;              &lt;mxPoint x=&quot;340&quot; y=&quot;289&quot; /&gt;&#xA;            &lt;/Array&gt;&#xA;          &lt;/mxGeometry&gt;&#xA;        &lt;/mxCell&gt;&#xA;        &lt;mxCell id=&quot;7853IceYujah36AVJ1Jo-21&quot; value=&quot;I&quot; style=&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];&quot; vertex=&quot;1&quot; connectable=&quot;0&quot; parent=&quot;7853IceYujah36AVJ1Jo-14&quot;&gt;&#xA;          &lt;mxGeometry x=&quot;0.7193&quot; y=&quot;2&quot; relative=&quot;1&quot; as=&quot;geometry&quot;&gt;&#xA;            &lt;mxPoint as=&quot;offset&quot; /&gt;&#xA;          &lt;/mxGeometry&gt;&#xA;        &lt;/mxCell&gt;&#xA;      &lt;/root&gt;&#xA;    &lt;/mxGraphModel&gt;&#xA;  &lt;/diagram&gt;&#xA;&lt;/mxfile&gt;&#xA;">
+    <defs/>
+    <rect fill="#ffffff" width="100%" height="100%" x="0" y="0"/>
+    <g>
+        <g data-cell-id="0">
+            <g data-cell-id="1">
+                <g data-cell-id="7853IceYujah36AVJ1Jo-13">
+                    <g>
+                        <path d="M 294 30 Q 118.96 30 118.99 73.63" fill="none" stroke="none" pointer-events="stroke"/>
+                        <path d="M 119 78.88 L 115.49 71.89 L 118.99 73.63 L 122.49 71.88 Z" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 294 30 C 176.99 32.22 116.62 43.94 118.99 73.63 M 294 30 C 174.85 33.37 119.71 43.17 118.99 73.63" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke"/>
+                        <path d="M 115.54 71.84 C 115.54 71.84 115.54 71.84 115.54 71.84 M 115.54 71.84 C 115.54 71.84 115.54 71.84 115.54 71.84 M 117.24 75.97 C 117.4 74.74 119.05 74.47 119.21 73.71 M 117.24 75.97 C 118.04 75.41 118.78 74.5 119.21 73.71" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                        <path d="M 119 78.88 C 117.66 75.96 118.02 75.01 115.49 71.89 M 119 78.88 C 117.85 76.53 116.78 74.68 115.49 71.89 M 115.49 71.89 C 116.82 73.14 117.62 73.24 118.99 73.63 M 115.49 71.89 C 116.41 72.31 117.49 72.68 118.99 73.63 M 118.99 73.63 C 119.6 73.28 120.63 72.66 122.49 71.88 M 118.99 73.63 C 119.88 73.3 121.29 72.54 122.49 71.88 M 122.49 71.88 C 119.98 75.16 120.92 75.85 119 78.88 M 122.49 71.88 C 121.84 73.7 121.07 76.15 119 78.88" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-1">
+                    <g>
+                        <rect x="294" y="0" width="230" height="60" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 294 0 C 360.85 2.11 432.52 0.97 524 0 M 294 0 C 360.97 0.48 424.03 3.43 524 0 M 524 0 C 525.26 20.26 522.26 35.86 524 60 M 524 0 C 522.85 13.4 523.4 25.84 524 60 M 524 60 C 443.69 60.32 366.74 64.21 294 60 M 524 60 C 432.49 60.85 339.69 61.18 294 60 M 294 60 C 298.12 38.18 294.74 17.34 294 0 M 294 60 C 293.33 44.6 291.38 30.92 294 0" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                    <g>
+                        <g transform="translate(-0.5 -0.5)">
+                            <switch>
+                                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                    <div
+                                        xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 228px; height: 1px; padding-top: 30px; margin-left: 295px;">
+                                        <div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); ">
+                                            <div style="display: inline-block; font-size: 20px; font-family: &quot;Garamond&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Paramètres de jeu</div>
+                                        </div>
+                                    </div>
+                                </foreignObject>
+                                <text x="409" y="36" fill="rgb(0, 0, 0)" font-family="&quot;Garamond&quot;" font-size="20px" text-anchor="middle">Paramètres de jeu</text>
+                            </switch>
+                        </g>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-11">
+                    <g>
+                        <path d="M 524 189.04 Q 689.04 189.04 689.01 146.37" fill="none" stroke="none" pointer-events="stroke"/>
+                        <path d="M 689 141.12 L 692.51 148.11 L 689.01 146.37 L 685.51 148.12 Z" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 524 189.04 C 633.71 189.9 685.06 178.78 689.01 146.37 M 524 189.04 C 636.34 184.68 693.62 176.02 689.01 146.37" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke"/>
+                        <path d="M 689.04 141.07 C 689.04 141.07 689.04 141.07 689.04 141.07 M 689.04 141.07 C 689.04 141.07 689.04 141.07 689.04 141.07 M 689.43 146.72 C 690.05 146.64 689.95 146.37 690.75 145.21 M 689.43 146.72 C 689.82 146.45 690.02 145.83 690.75 145.21" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                        <path d="M 689 141.12 C 691.61 144.02 689.6 146.83 692.51 148.11 M 689 141.12 C 689.79 144.15 691.48 146.12 692.51 148.11 M 692.51 148.11 C 692.34 148.33 690.68 147.02 689.01 146.37 M 692.51 148.11 C 691.22 147.71 690.32 147.22 689.01 146.37 M 689.01 146.37 C 688.29 147.6 687.52 146.72 685.51 148.12 M 689.01 146.37 C 687.98 146.69 687.69 146.87 685.51 148.12 M 685.51 148.12 C 687.33 147.37 686.33 144.31 689 141.12 M 685.51 148.12 C 686.38 145.5 687.66 143.54 689 141.12" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-7">
+                    <g>
+                        <rect x="294" y="159" width="230" height="60" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 294 159 C 362.8 160.4 429.27 161.3 524 159 M 294 159 C 366.92 163.14 439.8 161.53 524 159 M 524 159 C 520.29 181.98 527.62 198.23 524 219 M 524 159 C 524.45 176.72 523.77 189.64 524 219 M 524 219 C 451.39 213.64 381.31 219.23 294 219 M 524 219 C 467.1 218.16 410.09 217.35 294 219 M 294 219 C 296.25 206.27 291.24 192.49 294 159 M 294 219 C 293.61 196.07 293.66 173.94 294 159" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                    <g>
+                        <g transform="translate(-0.5 -0.5)">
+                            <switch>
+                                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                    <div
+                                        xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 228px; height: 1px; padding-top: 189px; margin-left: 295px;">
+                                        <div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); ">
+                                            <div style="display: inline-block; font-size: 20px; font-family: &quot;Garamond&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                                <div>Son</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </foreignObject>
+                                <text x="409" y="195" fill="rgb(0, 0, 0)" font-family="&quot;Garamond&quot;" font-size="20px" text-anchor="middle">Son</text>
+                            </switch>
+                        </g>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-12">
+                    <g>
+                        <path d="M 689 80 Q 689.04 30 530.37 30" fill="none" stroke="none" pointer-events="stroke"/>
+                        <path d="M 525.12 30 L 532.12 26.5 L 530.37 30 L 532.12 33.5 Z" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 689 80 C 688.71 48.21 636.99 31.68 530.37 30 M 689 80 C 688.96 46.17 638.82 34.52 530.37 30" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="3 3" pointer-events="stroke"/>
+                        <path d="M 524.93 30.22 C 524.93 30.22 524.93 30.22 524.93 30.22 M 524.93 30.22 C 524.93 30.22 524.93 30.22 524.93 30.22 M 528.61 32.09 C 529.39 31.15 530.33 30.58 530.57 29.82 M 528.61 32.09 C 529.1 31.87 529.42 31.18 530.57 29.82" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                        <path d="M 525.12 30 C 527.79 28.92 529.01 28.83 532.12 26.5 M 525.12 30 C 528.4 27.91 531.39 27.16 532.12 26.5 M 532.12 26.5 C 532.15 27.25 531.93 28.26 530.37 30 M 532.12 26.5 C 531.86 27.63 531.13 28.64 530.37 30 M 530.37 30 C 530.92 30.41 530.86 32.07 532.12 33.5 M 530.37 30 C 531.01 30.94 531.46 31.96 532.12 33.5 M 532.12 33.5 C 529.21 33.04 528.16 31.77 525.12 30 M 532.12 33.5 C 529.72 32.19 527.48 31.61 525.12 30" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-24" class="fragment" data-fragment-index="3">
+                    <g>
+                        <path d="M 804 80 Q 804 0 404 0 Q 4 0 4 73.63" fill="none" stroke="none" pointer-events="stroke"/>
+                        <path d="M 4 78.88 L 0.5 71.88 L 4 73.63 L 7.5 71.88 Z" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 804 80 C 803.68 26.66 670.26 -1.74 404 0 M 804 80 C 808.09 24.9 674.22 3.4 404 0 M 404 0 C 133.35 0.21 4.58 25.25 4 73.63 M 404 0 C 139.19 -3.67 0.1 22.95 4 73.63" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+                        <path d="M 0.17 72.26 C 0.17 72.26 0.17 72.26 0.17 72.26 M 0.17 72.26 C 0.17 72.26 0.17 72.26 0.17 72.26 M 2.54 75.64 C 2.97 75.37 3.22 74.73 3.85 74.13 M 2.54 75.64 C 3.06 75.17 3.34 74.65 3.85 74.13" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                        <path d="M 4 78.88 C 2.3 78.22 1.36 75.99 0.5 71.88 M 4 78.88 C 2.94 76.4 1.84 73.02 0.5 71.88 M 0.5 71.88 C 1.61 72.03 1.97 72.52 4 73.63 M 0.5 71.88 C 1.16 72.6 2.55 72.6 4 73.63 M 4 73.63 C 5.37 72.93 6.7 72.01 7.5 71.88 M 4 73.63 C 5.19 73.26 6.5 72.47 7.5 71.88 M 7.5 71.88 C 5.79 74.01 4.7 75.47 4 78.88 M 7.5 71.88 C 6.98 73.63 5.51 77.13 4 78.88" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                    <g data-cell-id="7853IceYujah36AVJ1Jo-25">
+                        <g>
+                            <g transform="translate(-0.5 -0.5)">
+                                <switch>
+                                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                        <div
+                                            xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 25px; margin-left: 82px;">
+                                            <div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                                <div style="display: inline-block; font-size: 11px; font-family: &quot;Helvetica&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                                    <div>IIIa</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </foreignObject>
+                                    <text x="82" y="29" fill="rgb(0, 0, 0)" font-family="&quot;Helvetica&quot;" font-size="11px" text-anchor="middle">IIIa</text>
+                                </switch>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-8">
+                    <g>
+                        <rect x="574" y="80" width="230" height="60" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 574 80 C 640.86 74.94 712.13 76.17 804 80 M 574 80 C 662.12 82.15 750.83 79.2 804 80 M 804 80 C 806.66 101.43 803.72 125.13 804 140 M 804 80 C 803.11 95.78 804.23 110.77 804 140 M 804 140 C 739.2 137.27 674.54 138.6 574 140 M 804 140 C 739.81 140.19 671.72 137.48 574 140 M 574 140 C 574.08 118.79 578.12 100.18 574 80 M 574 140 C 576.19 119.82 576.57 100.27 574 80" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                    <g>
+                        <g transform="translate(-0.5 -0.5)">
+                            <switch>
+                                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                    <div
+                                        xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 228px; height: 1px; padding-top: 110px; margin-left: 575px;">
+                                        <div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); ">
+                                            <div style="display: inline-block; font-size: 20px; font-family: &quot;Garamond&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Violoniste</div>
+                                        </div>
+                                    </div>
+                                </foreignObject>
+                                <text x="689" y="116" fill="rgb(0, 0, 0)" font-family="&quot;Garamond&quot;" font-size="20px" text-anchor="middle">Violoniste</text>
+                            </switch>
+                        </g>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-10">
+                    <g>
+                        <path d="M 119 140 Q 118.96 189.04 287.63 189" fill="none" stroke="none" pointer-events="stroke"/>
+                        <path d="M 292.88 189 L 285.88 192.5 L 287.63 189 L 285.88 185.5 Z" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 119 140 C 118.65 172.87 174.4 187.28 287.63 189 M 119 140 C 114.47 173.67 172.5 186.92 287.63 189" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+                        <path d="M 285.9 185.48 C 285.9 185.48 285.9 185.48 285.9 185.48 M 285.9 185.48 C 285.9 185.48 285.9 185.48 285.9 185.48 M 287.6 189.61 C 287.96 188.59 288.29 187.9 289.57 187.35 M 287.6 189.61 C 288.28 189.03 288.54 188.46 289.57 187.35" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                        <path d="M 292.88 189 C 290.16 188.46 289.13 190.1 285.88 192.5 M 292.88 189 C 291.34 190.57 288.87 190.2 285.88 192.5 M 285.88 192.5 C 287.37 190.9 287.6 189.14 287.63 189 M 285.88 192.5 C 286.65 191.6 287.12 189.77 287.63 189 M 287.63 189 C 287.56 188.05 286.46 186.45 285.88 185.5 M 287.63 189 C 287.01 187.68 286.39 186.68 285.88 185.5 M 285.88 185.5 C 286.99 187.56 290 189.03 292.88 189 M 285.88 185.5 C 288.05 186.48 289.49 186.55 292.88 189" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                    <g data-cell-id="7853IceYujah36AVJ1Jo-16" class="fragment" data-fragment-index="2">
+                        <g>
+                            <g transform="translate(-0.5 -0.5)">
+                                <switch>
+                                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                        <div
+                                            xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 187px; margin-left: 203px;">
+                                            <div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                                <div style="display: inline-block; font-size: 11px; font-family: &quot;Helvetica&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">II</div>
+                                            </div>
+                                        </div>
+                                    </foreignObject>
+                                    <text x="203" y="191" fill="rgb(0, 0, 0)" font-family="&quot;Helvetica&quot;" font-size="11px" text-anchor="middle">II</text>
+                                </switch>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-15">
+                    <g>
+                        <path d="M 234 110 Q 234 110 567.63 110" fill="none" stroke="none" pointer-events="stroke"/>
+                        <path d="M 572.88 110 L 565.88 113.5 L 567.63 110 L 565.88 106.5 Z" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 234 110 C 233.68 113.58 344.48 112.82 567.63 110 M 234 110 C 235.98 111.9 342.1 106.05 567.63 110" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+                        <path d="M 565.69 106.72 C 565.69 106.72 565.69 106.72 565.69 106.72 M 565.69 106.72 C 565.69 106.72 565.69 106.72 565.69 106.72 M 568.05 110.1 C 568.11 109.59 568.57 108.99 569.36 108.59 M 568.05 110.1 C 568.52 109.52 568.65 109.23 569.36 108.59" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                        <path d="M 572.88 110 C 572 111.67 569.5 110.96 565.88 113.5 M 572.88 110 C 571.65 110.57 569.36 111.69 565.88 113.5 M 565.88 113.5 C 566.58 111.5 567.67 110.35 567.63 110 M 565.88 113.5 C 566.43 112.56 566.87 112.3 567.63 110 M 567.63 110 C 566.39 108.07 566.02 107.81 565.88 106.5 M 567.63 110 C 567.05 108.97 566.07 107.35 565.88 106.5 M 565.88 106.5 C 566.71 108.3 567.99 107.12 572.88 110 M 565.88 106.5 C 568.4 107.6 571.58 109.17 572.88 110" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                    <g data-cell-id="7853IceYujah36AVJ1Jo-22" class="fragment" data-fragment-index="3">
+                        <g>
+                            <g transform="translate(-0.5 -0.5)">
+                                <switch>
+                                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                        <div
+                                            xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 110px; margin-left: 401px;">
+                                            <div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                                <div style="display: inline-block; font-size: 11px; font-family: &quot;Helvetica&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">IIIb</div>
+                                            </div>
+                                        </div>
+                                    </foreignObject>
+                                    <text x="401" y="114" fill="rgb(0, 0, 0)" font-family="&quot;Helvetica&quot;" font-size="11px" text-anchor="middle">IIIb</text>
+                                </switch>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-9">
+                    <g>
+                        <rect x="4" y="80" width="230" height="60" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 4 80 C 75.72 83.1 144.99 77.87 234 80 M 4 80 C 64.71 80.15 123.26 79.28 234 80 M 234 80 C 237.44 99.88 232.21 131.02 234 140 M 234 80 C 235.78 93.83 234.69 106.9 234 140 M 234 140 C 177.02 139.89 124.57 136.97 4 140 M 234 140 C 159.11 141.21 83.35 140.01 4 140 M 4 140 C -0.5 122.3 4.61 102.87 4 80 M 4 140 C 2.37 122.56 3.08 109.61 4 80" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                    <g>
+                        <g transform="translate(-0.5 -0.5)">
+                            <switch>
+                                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                    <div
+                                        xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 228px; height: 1px; padding-top: 110px; margin-left: 5px;">
+                                        <div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); ">
+                                            <div style="display: inline-block; font-size: 20px; font-family: &quot;Garamond&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">Violon</div>
+                                        </div>
+                                    </div>
+                                </foreignObject>
+                                <text x="119" y="116" fill="rgb(0, 0, 0)" font-family="&quot;Garamond&quot;" font-size="20px" text-anchor="middle">Violon</text>
+                            </switch>
+                        </g>
+                    </g>
+                </g>
+                <g data-cell-id="7853IceYujah36AVJ1Jo-14" class="fragment" data-fragment-index="1">
+                    <g>
+                        <path d="M 294 60 Q 224 60 224 109.52 Q 224 159.04 287.63 159" fill="none" stroke="none" pointer-events="stroke"/>
+                        <path d="M 292.88 159 L 285.88 162.51 L 287.63 159 L 285.88 155.51 Z" fill="none" stroke="none" pointer-events="all"/>
+                        <path d="M 294 60 C 247.01 62.9 226.46 73.62 224 109.52 M 294 60 C 251.7 58.04 222.82 78.45 224 109.52 M 224 109.52 C 227.28 139.95 241.47 157.26 287.63 159 M 224 109.52 C 226.21 146.3 246.41 161.1 287.63 159" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="stroke"/>
+                        <path d="M 286.14 155.21 C 286.14 155.21 286.14 155.21 286.14 155.21 M 286.14 155.21 C 286.14 155.21 286.14 155.21 286.14 155.21 M 287.84 159.35 C 288.57 158.95 289.73 157.76 289.81 157.08 M 287.84 159.35 C 288.64 158.37 289.41 157.7 289.81 157.08" fill="none" stroke="rgb(0, 0, 0)" stroke-width="0.5" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                        <path d="M 292.88 159 C 289.76 161.6 288.17 160.73 285.88 162.51 M 292.88 159 C 289.81 159.76 288.52 161.95 285.88 162.51 M 285.88 162.51 C 286.61 161.32 286.52 160.82 287.63 159 M 285.88 162.51 C 286 161.59 286.92 160.54 287.63 159 M 287.63 159 C 286.55 158.05 286.91 157.07 285.88 155.51 M 287.63 159 C 287.51 158.06 286.21 157.01 285.88 155.51 M 285.88 155.51 C 288.32 157.56 289.6 158.3 292.88 159 M 285.88 155.51 C 286.92 156.17 288.91 157.32 292.88 159" fill="none" stroke="rgb(0, 0, 0)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" pointer-events="all"/>
+                    </g>
+                    <g data-cell-id="7853IceYujah36AVJ1Jo-21">
+                        <g>
+                            <g transform="translate(-0.5 -0.5)">
+                                <switch>
+                                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                                        <div
+                                            xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 157px; margin-left: 261px;">
+                                            <div style="box-sizing: border-box; font-size: 0px; text-align: center;" data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                                <div style="display: inline-block; font-size: 11px; font-family: &quot;Helvetica&quot;; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">I</div>
+                                            </div>
+                                        </div>
+                                    </foreignObject>
+                                    <text x="261" y="161" fill="rgb(0, 0, 0)" font-family="&quot;Helvetica&quot;" font-size="11px" text-anchor="middle">I</text>
+                                </switch>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

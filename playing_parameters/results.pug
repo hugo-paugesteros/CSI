@@ -1,0 +1,25 @@
+section(title='Résultats')
+
+    section(title='Résultats de la selection des meilleurs descripteurs')
+
+        p.
+            Les figures 1, 2 et 3 montrent respectivement les influences des paramètres de vitesse d'archet, de force / nuance et de distance au chevalet sur certains descripteurs. Le trait rouge représente la valeur à partir de laquelle l'influence est considérée comme significative par le test statistique.
+
+        figure 
+            img(src="figures/best_params_V.png", alt="")
+            figcaption#best_params_V Influence de la vitesse d'archet
+
+        figure 
+            img(src="figures/best_params_F.png", alt="")
+            figcaption Influence de la force / nuance
+
+        figure 
+            img(src="figures/best_params_D.png", alt="")
+            figcaption Influence de la distance au chevalet
+
+        p.
+            D'une manière générale, nous remarquons que la valeur p renvoyée par le test statistique est plus élevée quand il s'agit du paramètre #[i vitesse d'archet] que pour les deux autres. Nous pouvons donc en conclure qu'il semble plus simple de distinguer plusieurs niveaux de vitesse d'archet que plusieurs niveaux des deux autres paramètres.
+        p.
+            Les trois descripteurs les plus corrélés à la vitesse d'archet sont la durée de l'attaque, la durée de la note ainsi que le logarithme de la durée de l'attaque. Le fait que la durée de la note soit corrélée avec la vitesse de l'archet est ici trivial, puisque les notes enregistrées étaient plus courtes avec une vitesse d'archet élevée. Une majorité des descripteurs les plus corrélés sont des descripteurs issus de l'enveloppe du signal, et non pas de son spectre.
+        p.
+            Nous remarquons cependant que pour les paramètres de jeu #[kbd Force / Nuance] et #[kbd Distance au chevalet], les descripteurs les plus corrélés semblent être de nature spectrale. Ceci peut s'expliquer par le fait que des phénomènes tels que le #[i flattening], qui fait baisser la fréquence de la note lorsque l'on jour sur la touche en appliquant beaucoup de force (ce qui était le cas ici en raison d'une force appliquée plus extrême que celle habituellement utilisée). Par ailleurs, ceci est également en accord avec l'influence de ces paramètres sur le mouvement de la corde frottée #{cite('schoonderwaldt2009')}.

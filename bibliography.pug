@@ -1,0 +1,17 @@
+section(title='Bibliographie')
+
+    mixin format(entry)
+        li
+            each author in entry.author
+                span #{author.given[0]}. #{author.family}, 
+            span #[i #{entry.title}]. 
+            if entry['container-title']
+                span #{entry['container-title']}, 
+            span #{entry.issued["date-parts"][0][0]}.
+    
+    ol
+        each id in used
+            if obj[id]
+                +format(obj[id])
+            else
+                li= id

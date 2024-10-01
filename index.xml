@@ -1,0 +1,836 @@
+
+<section title="Rapport de CSI">
+  <link rel="stylesheet" href="style.css"/>
+  <section title="Introduction">
+    <p>L'identité sonore d'un violon — si tant est qu'elle existe — résulte-t-elle principalement des caractéristiques de l'instrument ou bien est-elle influencée par la façon de jouer de l'instrumentiste ?</p>
+    <p>Il existe différentes façons de caractériser le son d'un violon : certaines études [1, 2] ont essayé de le décrire à partir des paramètres de construction de l'instrument, d'autres [3] à partir de mesures acoustiques (admittance au chevalet, mesures de rayonnement). Il est aussi possible de le faire via une analyse d'enregistrements audio [4], ou en demandant leur avis à des violonistes [5]. Dans les deux premiers cas, il n'y pas de prise en compte de l'interprète, qui est pourtant à l'origine du son. </p>
+    <p>Ceci explique peut-être pourquoi il est difficile de corréler mesures acoustiques et données perceptives.</p>
+    <p>Se posent alors les questions suivantes : un violon a-t-il une identité sonore propre ? Quelle est l'influence des violonistes sur le son produit ? Est-il possible de dissocier le son d'un violon du son produit par un⋅e violoniste ? Comment prendre en compte le facteur humain dans la caractérisation d'un violon ?</p>
+    <p>La suite de ce rapport est structurée de la manière suivante : tout d'abord, nous étudierons l'influence de certains paramètres de jeu sur le son produit. Ensuite, nous montrerons que malgré cette influence, il semble possible d'identifier des violons par leur son en condition de jeu. Enfin, nous nous demanderons si cette identité sonore peut évoluer au fur et à mesure qu'un violon est joué.</p>
+  </section>
+  <section title="Influence des paramètres de jeu sur certains descripteurs audio">
+    <section title="Introduction">
+      <p>Certains paramètres de jeu du violon ont une influence flagrante sur le son produit. Par exemple, une note jouée <i>ponticello</i> (avec un archet proche du chevalet) n'aura pas la même sonorité que cette même note jouée <i>sul tasto</i> (avec un archet sur la touche).</p>
+      <p>Dans [6], les auteurs s'intéressent à l'influence de trois paramètres (vitesse d'archet, distance archet-chevalet et force d'archet) sur le son produit à l'aide d'un monocorde et d'une machine à frotter.</p>
+      <p>Cependant, ces conditions expérimentales semblent assez artificielles par rapport à la réalité, où l'instrumentiste est moins précis⋅e et répétable qu'une machine et où l'instrument est plus complexe qu'un monocorde.</p>
+      <p>Est-il possible de vérifier les influences observées dans [5] dans des conditions réelles de jeu ? Quid de l'influence du violon ?</p>
+      <p>Je commencerai par présenter la méthodologie utilisée, avant de détailler les résultats obtenus. Enfin, je conclurai par une discussion des principaux enseignements de cette étude.</p>
+    </section>
+    <section title="Méthodologie">
+      <section title="Données">
+        <p>Afin de vérifier les résultats présentés dans [7], j'ai réalisé des enregistrements sur plusieurs violons en faisant varier les mêmes paramètres à savoir la vitesse d'archet, la force appliquée, et la distance au chevalet. Dans le but de correspondre autant que possibles aux conditions réelles de jeu, je n'ai pas mesuré les niveaux de ces différents paramètres, mais me suis donné des consignes "musicales". Ainsi, une vitesse d'archet lente, avec une force appliquée forte et une distance au chevalet faible se traduit en une note longue, jouée <i>forte</i> et <i>ponticello</i>. Chaque paramètre pouvait prendre trois valeurs :</p>
+        <ul>
+          <li>Vitesse d'archet $ \in [ \text{lente}, \text{moyenne}, \text{rapide} ]$</li>
+          <li>Force appliquée  $ \in [ \text{piano}, \text{mezzo}, \text{forte} ]$</li>
+          <li>Distance au chevalet  $ \in [ \text{ponticello}, \text{ordinario}, \text{sul tasto} ]$</li>
+        </ul>
+        <p>
+          12 enregistrements de ces 27 combinaisons possibles ont été réalisés sur une note tenue (plus précisément, une corde de ré à vide). Ces enregistrements ont été réalisés avec une fréquence d’échantillonnage de 44.1Hz, dans une pièce peu réverbérante, et sur plusieurs jours afin d'introduire une certaine variabilité dûe au violoniste.
+          
+        </p>
+      </section>
+      <section title="Descripteurs audio">
+        <style>
+          .desc tr th:last-child, .desc tr td:last-child {
+              display: none;
+          }
+        </style>
+        <table class="desc" style="font-size:0.8em;">
+          <caption>Liste des descripteurs utilisés</caption>
+          <tr>
+            <th>Type</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Formule</th>
+            <th>Utilisé dans</th>
+          </tr>
+          <tr>
+            <td>Temporelle</td>
+            <td>Attack</td>
+            <td>Durée de l'attaque d'une note</td>
+            <td>$$ t_{ \text{attack end} } - t_{ \text{attack start} } $$</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Temporelle</td>
+            <td>Attack slope</td>
+            <td>Durée de l'attaque d'une note</td>
+            <td>$$ t_{ \text{attack end} } - t_{ \text{attack start} } $$</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Temporelle</td>
+            <td>Decrease slope</td>
+            <td>Durée de l'attaque d'une note</td>
+            <td>$$ t_{ \text{attack end} } - t_{ \text{attack start} } $$</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Temporelle</td>
+            <td>Log-attack</td>
+            <td>Logarithme de la durée de l'attaque d'une note</td>
+            <td>$$ \log \left( t_{ \text{attack end} } - t_{ \text{attack start} } \right) $$</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Temporelle</td>
+            <td>Duration</td>
+            <td>Durée de la note</td>
+            <td>$$ t_{\text{end} } - t_{ \text{start} } $$</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Temporelle</td>
+            <td>RMS</td>
+            <td>Quantifie le volume d'un signal sonore</td>
+            <td>$$ RMS[m] \coloneqq \frac{1}{W} \sum_{k=mW}^{(m+1)W} x[k]^2  $$</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Temporelle</td>
+            <td>ZCR</td>
+            <td>Nombre de fois que le signal passe par $0$. Quantifie l'harmonicité.</td>
+            <td>$$ ZCR[m] \coloneqq \frac{1}{W} \sum_{k=mW}^{(m+1)W} \mathbb{1}_{&lt;0} x[k]x[k-1] $$</td>
+            <td></td>
+          </tr>
+        </table>
+        <break></break>
+        <table class="desc" style="font-size:0.8em;">
+          <tr>
+            <th>Type</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Formule</th>
+            <th>Utilisé dans</th>
+          </tr>
+          <tr>
+            <td>Temporelle</td>
+            <td>Temporal Centroid</td>
+            <td>Représente le centre de gravité temporel d'une note</td>
+            <td>
+              $$ 
+                  \mu \coloneqq
+                      \frac{
+                          \sum_{n=n_1}^{n_2} t[n] RMS[n]
+                      }{
+                          \sum_{n=n_1}^{n_2} RMS[n]
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Centroid</td>
+            <td>Représente le centre de gravité du spectre</td>
+            <td>
+              $$ 
+                  \mu_1[n] \coloneqq
+                      \frac{
+                          \sum_{k=k_1}^{k_2} f[k] S[k, n]
+                      }{
+                          \sum_{k=k_1}^{k_2} S[k, n]
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Spread</td>
+            <td>Représente la déviation autour du Spectral Centroid</td>
+            <td>
+              $$ 
+                  \mu_2[n] \coloneqq
+                      \frac{
+                          \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^2 S[k, n]
+                      }{
+                          \sum_{k=k_1}^{k_2} S[k, n]
+                      }
+              $$ 
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Skewness</td>
+            <td>Quantifie l'asymmétrie du spectre autour du Spectral Centroid</td>
+            <td>
+              $$ 
+                  \mu_3[n] \coloneqq
+                      \frac{
+                          \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^3 S[k, n]
+                      }{
+                          \mu_2^3 \sum_{k=k_1}^{k_2} S[k, n]
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Spread</td>
+            <td>Quantifie le fait que le spectre soit pointu autour du Spectral Centroid</td>
+            <td>
+              $$ 
+                  \mu_4[n] \coloneqq
+                      \frac{
+                          \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^4 S[k, n]
+                      }{
+                          \mu_2^4 \sum_{k=k_1}^{k_2} S[k, n]
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Slope</td>
+            <td>Pente de l'amplitude du spectre vue comme fonction de $f[k]$</td>
+            <td>
+              $$
+                  \alpha \coloneqq 
+                      \frac{
+                          \sum_k (f[k] - \bar{f})(S[k, n] - \bar{S}[n])
+                      }{
+                          \sum_k (f[k] - \bar{f})^2
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Decrease</td>
+            <td>Représente la décroissance du spectre</td>
+            <td>
+              $$
+                  SD \coloneqq
+                      \frac{
+                          \sum_{k=k_1+1}^{k_2} \frac{S[k, n] - S[k_1, n]}{k - k_1}
+                      }{
+                          \sum_{k=k_1}^{k_2} S[k, n]
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Rolloff</td>
+            <td>Bande de fréquence contenant $\alpha \%$ de l'énergie du spectre</td>
+            <td>
+              $$
+                  f[k_{RO}] \text{ tel que } 
+                      \sum_{k=k_1}^{k_{RO}} S[k, n] = \alpha \sum_{k=k_1}^{k_2} S[k, n]
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Variation</td>
+            <td>Mesure la variation entre deux trames successives d'un spectre</td>
+            <td>
+              $$
+                  SV \coloneqq 
+                      1 - \frac{
+                          \sum_{k} S[k, n-1]S[k, n] 
+                      }{
+                          \sqrt{\sum_k S[k, n-1]^2}
+                          \sqrt{\sum_k S[k, n]^2}
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Flux</td>
+            <td>Quantifie le fait que le spectre soit pointu autour du Spectral Centroid</td>
+            <td>
+              $$ 
+                  \mu_4[n] \coloneqq
+                      \frac{
+                          \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^4 S[k, n]
+                      }{
+                          \mu_2^4 \sum_{k=k_1}^{k_2} S[k, n]
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Flatness</td>
+            <td>Quantifie le fait que le spectre soit pointu autour du Spectral Centroid</td>
+            <td>
+              $$ 
+                  \mu_4[n] \coloneqq
+                      \frac{
+                          \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^4 S[k, n]
+                      }{
+                          \mu_2^4 \sum_{k=k_1}^{k_2} S[k, n]
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Spectral</td>
+            <td>Spectral Crest</td>
+            <td>Quantifie le fait que le spectre soit pointu autour du Spectral Centroid</td>
+            <td>
+              $$ 
+                  \mu_4[n] \coloneqq
+                      \frac{
+                          \sum_{k=k_1}^{k_2} \left( f[k] - \mu_1[n] \right)^4 S[k, n]
+                      }{
+                          \mu_2^4 \sum_{k=k_1}^{k_2} S[k, n]
+                      }
+              $$
+            </td>
+            <td></td>
+          </tr>
+        </table>
+      </section>
+      <section title="Test statistique">
+        <p>Afin de savoir quels descripteurs décrivent le mieux les changements de paramètres de jeu, un algorithme de sélection des meilleurs descripteurs est appliqué. Cet algorithme, issu de la bibliothèque <i>scikit-learn</i> [8] de Python, calcule un test d'analyse de variance (ANOVA) permettant de savoir quels descripteurs permettent de séparer au mieux différents niveaux d'un paramètre de jeu. Pour chaque paramètre de jeu, les meilleurs descripteurs sont ainsi obtenus.
+          
+        </p>
+      </section>
+    </section>
+    <section title="Résultats">
+      <section title="Résultats de la selection des meilleurs descripteurs">
+        <p>
+          Les figures 1, 2 et 3 montrent respectivement les influences des paramètres de vitesse d'archet, de force / nuance et de distance au chevalet sur certains descripteurs. Le trait rouge représente la valeur à partir de laquelle l'influence est considérée comme significative par le test statistique.
+          
+        </p>
+        <figure> <img src="figures/best_params_V.png" alt=""/>
+          <figcaption id="best_params_V">Influence de la vitesse d'archet</figcaption>
+        </figure>
+        <figure> <img src="figures/best_params_F.png" alt=""/>
+          <figcaption>Influence de la force / nuance</figcaption>
+        </figure>
+        <figure> <img src="figures/best_params_D.png" alt=""/>
+          <figcaption>Influence de la distance au chevalet</figcaption>
+        </figure>
+        <p>D'une manière générale, nous remarquons que la valeur p renvoyée par le test statistique est plus élevée quand il s'agit du paramètre <i>vitesse d'archet</i> que pour les deux autres. Nous pouvons donc en conclure qu'il semble plus simple de distinguer plusieurs niveaux de vitesse d'archet que plusieurs niveaux des deux autres paramètres.</p>
+        <p>Les trois descripteurs les plus corrélés à la vitesse d'archet sont la durée de l'attaque, la durée de la note ainsi que le logarithme de la durée de l'attaque. Le fait que la durée de la note soit corrélée avec la vitesse de l'archet est ici trivial, puisque les notes enregistrées étaient plus courtes avec une vitesse d'archet élevée. Une majorité des descripteurs les plus corrélés sont des descripteurs issus de l'enveloppe du signal, et non pas de son spectre.</p>
+        <p>Nous remarquons cependant que pour les paramètres de jeu <kbd>Force / Nuance</kbd> et <kbd>Distance au chevalet</kbd>, les descripteurs les plus corrélés semblent être de nature spectrale. Ceci peut s'expliquer par le fait que des phénomènes tels que le <i>flattening</i>, qui fait baisser la fréquence de la note lorsque l'on jour sur la touche en appliquant beaucoup de force (ce qui était le cas ici en raison d'une force appliquée plus extrême que celle habituellement utilisée). Par ailleurs, ceci est également en accord avec l'influence de ces paramètres sur le mouvement de la corde frottée [5].</p>
+      </section>
+    </section>
+    <section title="Discussion et conclusion">
+      <p>L'influence des principaux paramètres contrôle de l'archet (vitesse, force, distance au chevalet) sur des descripteurs audio classiques ont été étudiés ici à l'aide d'enregistrements réalisés dans des conditions réalistes de jeu.  Les données ont été récoltées en subdivisant ces trois paramètres en trois niveaux d'intention musicale : <i>lent</i>, <i>moyen</i>, <i>rapide</i> pour la vitesse d'archet, <i>piano</i>, <i>mezzo</i>, <i>forte</i> pour la force, et <i>ponticello</i>, <i>ordinario</i> et <i>sul tasto</i> pour la distance au chevalet.
+        
+      </p>
+      <p>
+        Les résultats montrent que dans ces conditions, les descripteurs classiques sont plus corrélés à la vitesse d'archet qu'aux autres paramètres. Plus précisément, ce sont des descripteurs issus de l'enveloppe du signal qui semblent être le plus corrélés à ce paramètre. Les deux autres (force et distance au chevalet) semblent se traduire par des variations d'ordre spectral (fréquence fondamentale, contenu harmonique, ...).
+        
+      </p>
+      <p>Afin de vraiment pouvoir comparer les résultats de cette analyse avec les résultats de [5], il serait intéressant de limiter le calcul des descripteurs à la partie stable de la note : cela enlèverait la plupart des descripteurs travaillant sur l'enveloppe du signal, mais rendrait peut-être l'analyse moins sujette aux variations en début et en fin de note.</p>
+    </section>
+  </section>
+  <section title="Identification individuelle de violons par leur son">
+    <section title="Introduction">
+      <p>L'identification d'instruments de musique est une tâche commune en <i>Music Information Retrieval</i> (MIR). Elle consiste à retrouver l'ensemble des instruments présents dans un enregistrement. C'est un problème qui a été longuement étudié, et, pour des enregistrements monophoniques (constitués d'un seul instrument), les modèles actuels permettent d'obtenir une précision de l'ordre de 100%.</p>
+      <p>Cependant, peu d'articles se sont intéressés à l'identification d'instruments au sein d'une même famille, comme par exemple l'identification de violons à partir de leur enregistrement. Les rares articles s'y étant intéressés utilisent la plupart du temps des enregistrements réalisés par une seule personne [9], ce qui enlève de la variabilité dûe au violoniste.</p>
+      <p>Le but de cette étude est de passer en revue et de comparer différentes façons d'aborder ce problème, depuis la collection et l'exploration des données jusqu'aux différents algorithmes permettant de faire cette classification. Des conseils sur la manière de réaliser les enregistrements seront donnés et une version à temps long des MFCCs sera introduite.</p>
+      <p>Cette partie est structurée comme suit : la section 3.2 présente la méthodologie générale, décrivant la collecte des données, l'extraction des descripteurs audio, leur exploration et enfin la classification à l'aide de méthodes d'apprentissage automatique. Les résultats sont discutés dans la section 3.3. Enfin, des conclusions sont tirées dans la section 3.4, qui esquisse également d'éventuels développements futurs.</p>
+    </section>
+    <section title="Méthodologie">
+      <section title="Base de données">
+        <p>Dans le cadre du projet Bilbao, treize violons ont été fabriqués afin d'établir une relation entre leurs caractéristiques matérielles et géométriques et leur qualité tonale [10]. Ces violons ont été joués en 2019 par vingt-trois violonistes professionnels, chacun ayant enregistré une gamme sur chaque violon ainsi qu'un court extrait musical sur un violon de leur choix. Les enregistrements ont été réalisés dans des conditions identiques, dans une grande salle de répétition du conservatoire de Bilbao, en maintenant une distance constante entre le musicien et le microphone. Notre ensemble de données se compose ainsi de $13 \times 23$ gammes, plus $1 \times 23$ extraits musicaux.</p>
+        <figure><img src="../identification/figures/class_weights.png" alt=""/>
+          <figcaption>Temps d'enregistrement disponible par violoniste et par violon.</figcaption>
+        </figure>
+        <p>Six de ces treize violons (violons numéros 1, 4, 5, 9, 11 et 13) ont été apportés au workshop de Villfavard en 2024 et ont été enregistrés à nouveau. Ils ont été joués librement par quatre nouveaux musiciens dans une petite salle, dans des conditions assez différentes de celles des enregistrements de 2019.</p>
+        <figure><img src="../identification/figures/class_weights_2024.png" alt=""/>
+          <figcaption>Temps d'enregistrement disponible par violoniste et par violon.</figcaption>
+        </figure>
+      </section>
+      <section title="Descripteurs audio">
+        <p>Les descripteurs suivants ont été comparés lors de la classification :</p>
+        <section title="Long Time Average Spectra (LTAS)">
+          <p>Le <i>Long-Time Average Spectra</i> (LTAS) d'un enregistrement est obtenu en divisant le signal d'entrée en segments superposés, puis en calculant la DFT (transformée de Fourier discrète) fenêtrée de chaque segment, et enfin en moyennant la puissance de ces DFTs.</p>
+          <figure>
+             <svg width="600" height="100" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="45" y="50" font-size="12" text-anchor="middle">Signal</text>
+<rect x="100" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="135" y="50" font-size="12" text-anchor="middle">Window</text>
+<rect x="190" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="225" y="50" font-size="12" text-anchor="middle">DFT</text>
+<rect x="280" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="315" y="50" font-size="12" text-anchor="middle">|⋅|²</text>
+<rect x="370" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="405" y="50" font-size="12" text-anchor="middle">Average</text>
+<rect x="460" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="495" y="50" font-size="12" text-anchor="middle">LTAS</text>
+<line x1="80" y1="45" x2="90" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="170" y1="45" x2="180" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="260" y1="45" x2="270" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="350" y1="45" x2="360" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="440" y1="45" x2="450" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+<polygon points="0 0, 10 3, 0 6" fill="black"/>
+</marker>
+</defs>
+</svg>
+          </figure>
+          <p>Le LTAS a été utilisé dans [11, 12, 13] afin de comparer la qualité tonale des violons. Plus précisément, le son des violons italiens anciens (Stradivari/Guarneri) et des violons modernes a été comparé. L'auteur conclut que des différences entre ces deux groupes peuvent être mises en évidence en utilisant le LTAS.</p>
+        </section>
+        <section title="Mel-Frenquency Cepstral Coefficients (MFCC)">
+          <p>Les MFCCs sont obtenus en calculant en projetant les fréquences d'un spectres sur une échelle Mel (une échelle perceptuelle constituée de hauteurs jugées équidistantes par des auditeur⋅ices), en prenant le logarithme, puis en calculant la DCT (Transformée en Cosinus Discrète) du résultat.</p>
+          <p>Comme ici nous nous intéressons à des caractéristiques ayant une signification à long terme (on cherche une signature sonore d'un violon), un LTAS a été utilisé comme base du calcul des MFCCs. Il s'agit alors d'une version à temps long des MFCCs classiques.</p>
+          <figure><svg width="600" height="100" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="45" y="50" font-size="12" text-anchor="middle">Signal</text>
+<rect x="100" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="135" y="50" font-size="12" text-anchor="middle">LTAS</text>
+<rect x="190" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="225" y="40" font-size="12" text-anchor="middle">Mel</text>
+<text x="225" y="55" font-size="12" text-anchor="middle">Filter</text>
+<rect x="280" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="315" y="50" font-size="12" text-anchor="middle">Log</text>
+<rect x="370" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="405" y="50" font-size="12" text-anchor="middle">DCT</text>
+<rect x="460" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="495" y="50" font-size="12" text-anchor="middle">MFCC</text>
+<line x1="80" y1="45" x2="90" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="170" y1="45" x2="180" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="260" y1="45" x2="270" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="350" y1="45" x2="360" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="440" y1="45" x2="450" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+<polygon points="0 0, 10 3, 0 6" fill="black"/>
+</marker>
+</defs>
+</svg>
+          </figure>
+          <p>Les MFCCs sont des descripteurs qui ont été largement utilisés pour la reconnaissance automatique des locuteurs et pour la classification des instruments.</p>
+        </section>
+        <section title="Long-Term Cepstral Coefficients (LTCC)">
+          <p>Les LTCCs ont été introduits dans [14] pour l'identification individuelle d'instruments. Leur calcul est similaire à celui des MFCCs, sauf que la projection sur l'échelle Mel n'est pas appliquée et que l'étape finale est constituée d'une transformée de Fourier discrète inverse (iDFT).</p>
+          <figure><svg width="500" height="100" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="45" y="50" font-size="12" text-anchor="middle">Signal</text>
+<rect x="100" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="135" y="50" font-size="12" text-anchor="middle">LTAS</text>
+<rect x="190" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="225" y="50" font-size="12" text-anchor="middle">Log</text>
+<rect x="280" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="315" y="50" font-size="12" text-anchor="middle">iDFT</text>
+<rect x="370" y="30" width="70" height="30" fill="none" stroke="black"/>
+<text x="405" y="50" font-size="12" text-anchor="middle">LTCC</text>
+<line x1="80" y1="45" x2="90" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="170" y1="45" x2="180" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="260" y1="45" x2="270" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<line x1="350" y1="45" x2="360" y2="45" stroke="black" marker-end="url(#arrow)"/>
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+<polygon points="0 0, 10 3, 0 6" fill="black"/>
+</marker>
+</defs>
+</svg>
+          </figure>
+        </section>
+        <section title="Exploration des données">
+          <section title="Variabilité des LTAS">
+            <p>Un paramètre majeur intervenant lors du calcul du LTAS est la durée de l'extrait sur lequel calculer ce spectre moyen. La figure ci-dessous montre la variabilité de ce calcul pour quatre durées d'extraits pour un même violon :</p>
+            <figure> 
+              <figcaption>Moyennes (traits pleins) et écarts-types (fond transparent) des LTAS d'un même violon en fonction de la durée de l'extrait choisi</figcaption><img src="/home/hugo/Thèse/identification/figures/ltas_length.png" alt="" srcset=""/>
+            </figure>
+            <p>Nous remarquons que la variance des LTAS des extraits d'une seconde est beaucoup plus forte que pour les autres durées. De plus, il ne semble pas y avoir d'énormes différences de variances entre les durées au delà de 10 secondes. Ceci indique que la variabilité des LTAS atteint une certaine stabilité dès que nous considérons des extraits d'une durée de quelques dizaines de secondes. Par la suite, les LTAS seront donc calculés en considérant des extraits de cet ordre de grandeur.</p>
+          </section>
+          <section title="Sélection des descripteurs">
+            <p>Il est possible de lancer des algorithmes de sélection de descripteurs afin de voir quels coefficients discriminent le mieux les violons.</p>
+            <figure> <img src="/home/hugo/Thèse/identification/figures/ltas.png" alt="" srcset=""/>
+              <figcaption>LTAS des violons (au-dessus) et meilleurs coefficients sélectionnés par l'algorithme.</figcaption>
+            </figure>
+            <figure> <img src="/home/hugo/Thèse/identification/figures/mfcc_select.png" alt="" srcset=""/>
+              <figcaption>MFCCs des violons (au-dessus) et meilleurs coefficients sélectionnés par l'algorithme.</figcaption>
+            </figure>
+            <figure> <img src="/home/hugo/Thèse/identification/figures/ltcc_select.png" alt="" srcset=""/>
+              <figcaption>LTCCs des violons (au-dessus) et meilleurs coefficients sélectionnés par l'algorithme.</figcaption>
+            </figure>
+            <p>Certains coefficients semblent plus discriminants que d'autres quant à la reconnaissance de violons à partir de leur enregistrement. En particulier, sur la figure relative aux LTAS, il est possible de voir quelles zones fréquentielles sont les plus discriminantes. Ainsi, nous pouvons remarquer que la zone autour de 800 Hz est beaucoup plus discriminante que la zone 250-600 Hz, qui est pourtant celle beaucoup regardée par les luthiers.</p>
+          </section>
+        </section>
+        <section title="Classification">
+          <p>Nous comparons les résultats de trois algorithmes de classification parmi les plus populaires : les K Plus Proches Voisins, les Machines à Vecteurs de Support et le Perceptron Multicouche. Ces trois algorithmes utilisent différentes stratégies d'apprentissage et donneront ainsi des résultats différents sur nos données.</p>
+          <section title="K-Nearest Neighbours">
+            <p>Les K Plus Proches Voisins est une méthode qui trouve les points d'entraînement les plus proches d'un nouveau point de test et prédit sa classe à partir de ceux-ci. Étant donné que la prédiction est effectuée directement à partir des données d'entraînement, cette méthode est non paramétrique (ou non généralisante), ce qui est un avantage lorsque la frontière de décision est irrégulière.</p>
+          </section>
+          <section title="Support Vector Machines">
+            <p>Les Machines à Vecteurs de Support sont une méthode d'apprentissage supervisé utilisée pour la classification. Elles fonctionnent en trouvant un hyperplan optimal qui maximise la distance entre chaque classe dans les données d'entraînement. Cet algorithme est coûteux en termes de calcul, mais possède généralement de bonnes propriétés de généralisation.</p>
+          </section>
+          <section title="Multilayer Perceptron">
+            <p>Le perceptron multicouche est une méthode d'apprentissage supervisé qui apprend une fonction $f : \mathbb{R}^n \to \mathbb{R}^o$ à l'aide de données d'entraînement. Pour ce faire, il utilise des couches de neurones : chaque neurone transforme le résultat de la couche précédente en formant une sommation linéaire pondérée $w_0 + w_1 x_1 + \dots + w_n x_n$, suivie d'une fonction d'activation non linéaire.</p>
+            <p>Cette méthode a montré son efficacité dans divers domaines, car les fonctions d'activation non linéaires peuvent modéliser des relations complexes dans les données, tandis que les couches cachées peuvent apprendre des représentations hiérarchiques à partir des données d'entrée. Cependant, les perceptrons multicouches sont sujets au surapprentissage, en particulier sur de petits ensembles de données.</p>
+          </section>
+        </section>
+      </section>
+    </section>
+    <section title="Résultats">
+      <p>Dans cette section, nous présentons les résultats de la tâche de classification réalisée sur différents sous-ensembles du jeu de données. Nous comparons les résultats de chaque descripteur associé à chaque algorithme de classification. Les résultats présentés ci-dessous sont ceux obtenus après l'ajustement des hyperparamètres, qui peuvent être des hyperparamètres dans le calcul des descripteurs (fréquence d'échantillonnage, taille des fenêtres de pondération, etc.) ou des hyperparamètres de l'algorithme de classification (comme $k$ pour les K Plus Proches Voisins, par exemple).</p>
+      <table style="width:100%">
+        <caption>Résultats en utilisant les gammes comme données d'entraînement et les extraits musicaux comme données de test</caption>
+        <thead>
+          <tr>
+            <th>Méthode</th>
+            <th>Descripteur</th>
+            <th>Entraînement</th>
+            <th>Test</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3">K-NN</td>
+            <td>LTAS</td>
+            <td>100%</td>
+            <td>66%</td>
+          </tr>
+          <tr>
+            <td>LTCC</td>
+            <td>100%</td>
+            <td>66%</td>
+          </tr>
+          <tr>
+            <td>MFCC</td>
+            <td>100%</td>
+            <td>95%</td>
+          </tr>
+          <tr>
+            <td rowspan="3">SVM</td>
+            <td>LTAS</td>
+            <td>99%</td>
+            <td>83%</td>
+          </tr>
+          <tr>
+            <td>LTCC</td>
+            <td>99%</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>MFCC</td>
+            <td>98%</td>
+            <td>92%</td>
+          </tr>
+          <tr>
+            <td rowspan="3">MLP</td>
+            <td>LTAS</td>
+            <td>38%</td>
+            <td>54%</td>
+          </tr>
+          <tr>
+            <td>LTCC</td>
+            <td>99%</td>
+            <td>83%</td>
+          </tr>
+          <tr>
+            <td>MFCC</td>
+            <td>99%</td>
+            <td>92%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section title="Discussion et conclusion">
+      <p>Cette avait pour but de comparer différents descripteurs et différentes méthodes de classification afin de réaliser une tâche d'identification de violons à partir de leur son.</p>
+      <p>Parmi ces descripteurs, les MFCCs et les LTCCs semblent les plus adaptés à cette tâche. Fournis à une méthode de classification telle que les K-NN, ils permettent en effet d'identifier des violons joués par plusieurs violonistes avec une précision de 95%.</p>
+      <p>Une étape importante serait alors d'arriver à relier ces descripteurs à la perception humaine. Serait-il alors possible de les utiliser pour calculer des distances entre les violons ? Leurs dimensions reflètent-elles certaines caractéristiques du timbre d'un instrument ?</p>
+    </section>
+  </section>
+  <section title="Influence du jeu sur l'identité sonore d'un violon">
+    <section title="Introduction">
+      <p>Il est souvent avancé que le son d'un instrument évolue au fil des années. Cela peut être dû à de nombreuses causes physiques : évolution de la structure et des matériaux, modifications des réglages de l'instrument, etc. Des études, passées ou en cours [15], s'intéressent à la quantification de ces changements de sonorité via des mesures acoustiques. Les luthiers et les violonistes avancent aussi que la sonorité d'un instrument évolue au fur et mesure qu'il est joué. Ainsi, un violon neuf sera dit "vert" ou "fermé".</p>
+      <p>Cependant, à ce jour, aucune étude s'étant intéressée à ce sujet (comme [16]) n'a permis d'affirmer que de tels changements de sonorité pouvaient être dûs au jeu des violonistes.</p>
+      <p>Nous pouvons alors nous poser les questions suivantes : l'interprète est-il aussi à l'origine de l'évolution de l'instrument ? Dans quelle mesure laisse-t-il son empreinte sur le son de celui-ci ? Est-ce que cette évolution n'est pas que ressentie par l'interprète qui a progressivement modifié son jeu pour tirer le meilleur de son instrument ?</p>
+      <p>Pour répondre à ces questions, une expérience est en cours au sein du Conservatoire National Supérieur de Danse et de Musique de Paris, sous la coordination de Julien Dubois, responsable du parc instrumental, et avec le concours de l'enseignante, concertiste-interprète et cheffe d'orchestre Stéphanie Marie Degand. Pendant trois mois à partir de septembre, Stéphanie Marie Degand va jouer un instrument du parc, essayant de lui donner un son différent et d'y laisser son empreinte sonore. L'objectif de cette expérience est de vérifier s'il y a eu d'éventuelles évolutions d'un point de vue acoustique et/ou s'il y a eu des évolutions dans la façon de jouer de l'interprète.</p>
+      <p>Nous commencerons par présenter la méthodologie utilisée, avant de détailler les résultats (partiels) obtenus. Enfin, nous conclurons par une discussion des principaux enseignements de cette étude.</p>
+    </section>
+    <section title="Méthodologie">
+      <section title="Protocole expérimental">
+        <p>L'expérience fait intervenir trois violons : un test (Klimke, 2012) et deux de contrôle (Levaggi, 2012 et Stopanni, 2018). Elle fait aussi intervenir une quinzaine de violonistes de très bon niveau : une violoniste test (Stéphanie Marie Degand), et une quatorzaine de violonistes de contrôle. Au cours de l'expérience, le violon test va être joué par Stéphanie Marie Degand dans le but de l'ouvrir.</p>
+        <p>L'expérience se divise en quatre sessions : les deux premières (à une semaine d'intervalle) ont eu lieu en septembre, les deux dernières (toujours à une semaine d'intervalle) auront lieu quand le violon test sera considéré ouvert par Stéphanie Marie Degand. Le fait qu'il y ait à chaque fois deux sessions à une semaine d'intervalle va permettre de quantifier la variabilité individuelle sans qu'il n'y ait eu aucun changement notable des violons (et ainsi avoir un seuil de variabilité en-dessous duquel nous ne pourrons conclure à une modification réelle du violon).</p>
+        <p>Avant le début de l'expérience, les violons ont été réglés suivant les consignes de Stéphanie Marie. Ils ne seront pas réglés par la suite.</p>
+        <p>Par ailleurs, nous avons voulu profiter de cette expérience pour répondre à une autre question qui nous intéresse, liée à l'influence de l'aspect visuel sur l'identité sonore d'un instrument. Nous avons ainsi découpé chaque session en deux conditions, l'une en aveugle, l'autre non, sachant que le Stoppani a un vernis patiné alors que les deux autres ont un vernis plein brillant. Le déroulé de chaque session est présenté ci-dessous.</p>
+        <table>
+          <caption>Déroulé de chaque session</caption>
+          <thead>
+            <tr>
+              <th>Condition</th>
+              <th>Déroulé de chaque session</th>
+              <th>Durée (min)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>Accueil, explications</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Aveugle</td>
+              <td>Période de familiarisation avec les trois instruments. <br/>
+                Notation (sur 10) de chaque instrument suivant les trois critères suivants : puissance, facilité de jeu et beauté du timbre.
+              </td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Enregistrements (3 gammes + morceaux du répertoire)</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td rowspan="2">Non-aveugle</td>
+              <td>Période de familiarisation avec les deux instruments (cf. ci-dessous). Notation suivant les mêmes critères.</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Enregistrements (3 gammes + morceaux du répertoire)</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td> </td>
+              <td>Discussions et conclusion</td>
+              <td>5</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Lors de la partie en aveugle, les participant⋅es se voient présenter les trois violons successivement. En non aveugle, nous ne leur présentons plus que deux violons : le Klimke et le Stopanni (à noter que nous ne précisons pas qu'il s'agit des mêmes violons que ceux ayant été joués en aveugle : la plupart des participants pensent jouer 5 instruments en tout).</p>
+      </section>
+      <section title="Enregistrements">
+        <p>Les enregistrements ont été réalisés au CNSMDP, sur le plateau 1. C'est une pièce relativement grande et sèche, équipée de tout le matériel nécessaire pour enregistrer. Les captations ont été faites à l'aide d'un couple de micros 
+          <kbp>DPA-4010</kbp>, qui ont une réponse en fréquence quasiment plate, placés à une cinquantaine de centimètres des violonistes. Les données ont été collectées avec une fréquence d'échantillonnage de 48kHz.
+        </p>
+      </section>
+      <section title="Traitement des enregistrements">
+        <p>Les enregistrements seront traités grâce aux méthodes présentées dans la partie sur l'identification individuelle de violon. En effet, ce travail a permis de faire émerger des descripteurs permettant de discriminer le son produit par plusieurs violons. À l'issu de l'expérience, il sera donc possible de quantifier à quel point ces descripteurs appliqués aux enregistrements du violon test ont évolué entre les deux sessions. Il sera également possible de vérifier que ces même descripteurs n'ont pas significativement changé pour les violons de contrôle entre les deux sessions.</p>
+        <p>Nous espérons aussi que ces descripteurs soient suffisamment représentatifs du son d'un violon pour pouvoir calculer une distance entre le son de chaque violon de l'expérience et le son du violon de chaque participant⋅e.</p>
+      </section>
+      <section title="Traitement des évaluations">
+        <p>Les évaluations recueillies seront traités par un test statistique (ANOVA) afin de savoir quels facteurs (violon, violoniste, condition et session) les affectent significativement.</p>
+      </section>
+    </section>
+    <section title="Résultats">
+      <section title="Enregistrements">
+        <p>Travail en cours... Peut-être sera-t-il prêt d'ici le CSI ? Seul le temps nous le dira.</p>
+      </section>
+      <section title="Évaluations">
+        <p>Voici les résultats donnés par le test statistique sur les évaluations récoltées lors de l'expérience :</p><table class="dataframe">
+<caption>Résultats de l'ANOVA sur les évaluations récoltées :</caption>
+  <thead>
+    <tr style="text-align: unset;">
+      <th></th>
+      <th>F Value</th>
+      <th>Num DF</th>
+      <th>Den DF</th>
+      <th>Pr &gt; F</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Violon</th>
+      <td>0.158</td>
+      <td>1</td>
+      <td>10</td>
+      <td>0.699</td>
+    </tr>
+    <tr>
+      <th>Critère</th>
+      <td>2.515</td>
+      <td>2</td>
+      <td>20</td>
+      <td>0.106</td>
+    </tr>
+    <tr>
+      <th>Condition</th>
+      <td>0.566</td>
+      <td>1</td>
+      <td>10</td>
+      <td>0.469</td>
+    </tr>
+    <tr>
+      <th>Session</th>
+      <td>0.007</td>
+      <td>1</td>
+      <td>10</td>
+      <td>0.935</td>
+    </tr>
+    <tr>
+      <th>Violon:Critère</th>
+      <td>3.277</td>
+      <td>2</td>
+      <td>20</td>
+      <td>0.059</td>
+    </tr>
+    <tr>
+      <th>Violon:Condition</th>
+      <td>1.263</td>
+      <td>1</td>
+      <td>10</td>
+      <td>0.287</td>
+    </tr>
+    <tr>
+      <th>Critère:Condition</th>
+      <td>4.309</td>
+      <td>2</td>
+      <td>20</td>
+      <td>0.028</td>
+    </tr>
+    <tr>
+      <th>Violon:Session</th>
+      <td>0.056</td>
+      <td>1</td>
+      <td>10</td>
+      <td>0.819</td>
+    </tr>
+    <tr>
+      <th>Critère:Session</th>
+      <td>1.875</td>
+      <td>2</td>
+      <td>20</td>
+      <td>0.179</td>
+    </tr>
+    <tr>
+      <th>Condition:Session</th>
+      <td>0.005</td>
+      <td>1</td>
+      <td>10</td>
+      <td>0.943</td>
+    </tr>
+    <tr>
+      <th>Violon:Critère:Condition</th>
+      <td>0.301</td>
+      <td>2</td>
+      <td>20</td>
+      <td>0.744</td>
+    </tr>
+    <tr>
+      <th>Violon:Critère:Session</th>
+      <td>0.791</td>
+      <td>2</td>
+      <td>20</td>
+      <td>0.467</td>
+    </tr>
+    <tr>
+      <th>Violon:Condition:Session</th>
+      <td>0.190</td>
+      <td>1</td>
+      <td>10</td>
+      <td>0.672</td>
+    </tr>
+    <tr>
+      <th>Critère:Condition:Session</th>
+      <td>0.799</td>
+      <td>2</td>
+      <td>20</td>
+      <td>0.464</td>
+    </tr>
+    <tr>
+      <th>Violon:Critère:Condition:Session</th>
+      <td>2.492</td>
+      <td>2</td>
+      <td>20</td>
+      <td>0.108</td>
+    </tr>
+  </tbody>
+</table>
+
+        <p>Aucun facteur ne semble significativement affecter les notes. Que le violon n'ait pas un effet significatif peut s'expliquer de plusieurs raisons : d'une part, les violons utilisés sont tous trois de bonne facture et ne présentent pas de défaut flagrant. Deuxièmement, les critères et surtout l'échelle utilisée pour les notés ne sont peut-être pas suffisamment précis pour les discriminer. En effet, lors de l'expérience, nous nous sommes rendus compte que la plupart des candidat⋅es ne donnaient que très rarement des notes en dehors de l'intervalle $[6;9]$. Peut-être faudra-t-il forcer les participant⋅es à utiliser une plage de notes plus grande.</p>
+        <p>Par ailleurs, il ne semble pas y avoir un effet significatif de la condition (aveugle / non-aveugle) dans laquelle les violons ont été notés. En l'état, nous ne rejetons donc pas l'hypothèse nulle selon laquelle l'aspect visuel n'a pas d'influence sur les notes attribuées par les violonistes (ce qui ne signifie pas que cette hypothèse soit vraie, juste que nous n'avons pas suffisamment de preuves).</p>
+      </section>
+    </section>
+    <section title="Discussion et conclusion">
+      <p>Le but de cette étude est de savoir à quel point les violonistes peuvent laisser leur empreinte sonore sur leur instrument. Un objectif secondaire, est de savoir à quel point l'aspect visuel des instruments peut modifier la perception des musicien⋅nes.</p>
+      <p>Les données permettant de répondre à la première question sont encore en cours de collecte : après une première session d'enregistrement, le violon <i>Klimke</i> va être joué pendant plusieurs mois par Stéphanie Marie Degand dans le but de changer sa sonorité. La deuxième session d'enregistrement aura lieu courant janvier : il sera alors possible de quantifier cette évolution à l'aide des descripteurs audio permettant d'identifier les violons. Pour ce qui est de la deuxième question, nous ne pouvons pas affirmer que l'aspect visuel a eu un impact sur les notes qu'ont donné les participant⋅es.</p>
+      <p>Une idée serait alors de modifier légèrement l'objectif secondaire : est-ce que l'histoire d'un violon influe la perception que les violonistes en ont ? Nous pourrions par exemple dire aux participant⋅es que tel violon a été joué par tel soliste. Cela aura-t-il une influence sur les notes qui lui sont données ?</p>
+    </section>
+  </section>
+  <section title="Conclusion">
+    <p>Voici la conclusion de ce rapport qui, je l'espère, n'a pas été trop désagréable à lire. Les deux questions auxquelles je me suis principalement attaquées sont :</p>
+    <ol> 
+      <li>Les violons ont-ils une identité sonore propre, dissociable du violoniste qui les joue ?</li>
+      <li>Dans quelle mesure les violonistes laissent leur empreinte sonore sur leur instrument ?</li>
+    </ol>
+    <p> La première partie, correspondant au début de ma thèse, a permis de montrer qu'il est possible de remonter à certains paramètres de jeu via des descripteurs audio classiquement utilisés dans la littérature, et ce, même dans des conditions de jeu réalistes. La deuxième partie s'est attaquée à la définition d'une signature sonore des violons. Pour ce faire, des descripteurs audio à temps long ont été comparés, et deux d'entre eux (LTCCs et MFCCs) permettent d'obtenir des résultats encourageants. Enfin, l'expérience en cours au CNSMDP va permettre de savoir dans quelle mesure une violoniste peut laisser son empreinte sonore sur un violon en le jouant.</p>
+    <p>Une des principales pistes d'ouverture identifiées serait de réussir à relier les descripteurs utilisés pour l'identification à la perception humaine. En effet, les distances calculées entre les descripteurs ne correspondent pas forcément aux distances relevées lors de questionnaires soumis à un groupe de violonistes et de luthiers. En effet, les distances entre les violons déterminées à partir des descripteurs calculés sur les enregistrements ne semble pas corréler avec les distances perceptives obtenues par catégorisation libre des enregistrements.</p>
+  </section>
+  <section title="Bibliographie">
+    <ol>
+          <li><span>A. Buen, </span><span><i>Can we hear the geometrical measures of a violin?</i>. </span><span>Proceedings from BNAM, </span><span>2006.</span>
+          </li>
+          <li><span>S. Gonzalez, </span><span>D. Salvi, </span><span>D. Baeza, </span><span>F. Antonacci, </span><span>A. Sarti, </span><span><i>A data-driven approach to violin making</i>. </span><span>Scientific Reports, </span><span>2021.</span>
+          </li>
+          <li><span>E. Jansson, </span><span><i>Admittance Measurements of 25 High Quality Violins</i>. </span><span>Acta Acustica, </span><span>1997.</span>
+          </li>
+          <li><span>J. Charles, </span><span>D. Fitzgerald, </span><span>E. Coyle, </span><span><i>Violin sound quality detection</i>. </span><span>IET Irish Signals and Systems Conference (ISSC 2008), </span><span>2008.</span>
+          </li>
+          <li><span>C. Fritz, </span><span>J. Curtin, </span><span>J. Poitevineau, </span><span>H. Borsarello, </span><span>I. Wollman, </span><span>F. Tao, </span><span>T. Ghasarossian, </span><span><i>Soloist evaluations of six Old Italian and six new violins</i>. </span><span>Proceedings of the National Academy of Sciences, </span><span>2014.</span>
+          </li>
+          <li><span>E. Schoonderwaldt, </span><span><i>The Violinist's Sound Palette: Spectral Centroid, Pitch Flattening and Anomalous Low Frequencies</i>. </span><span>Acta Acustica united with Acustica, </span><span>2009.</span>
+          </li>
+          <li><span>F. Setragno, </span><span>M. Zanoni, </span><span>A. Sarti, </span><span>F. Antonacci, </span><span><i>Feature-based characterization of violin timbre</i>. </span><span>2017 25th European Signal Processing Conference (EUSIPCO), </span><span>2017.</span>
+          </li>
+          <li><span>F. Pedregosa, </span><span>G. Varoquaux, </span><span>A. Gramfort, </span><span>V. Michel, </span><span>B. Thirion, </span><span>O. Grisel, </span><span>M. Blondel, </span><span>P. Prettenhofer, </span><span>R. Weiss, </span><span>V. Dubourg, </span><span>J. Vanderplas, </span><span>A. Passos, </span><span>D. Cournapeau, </span><span>M. Brucher, </span><span>M. Perrot, </span><span>É. Duchesnay, </span><span><i>Scikit-learn: Machine Learning in Python</i>. </span><span>Journal of Machine Learning Research, </span><span>2011.</span>
+          </li>
+          <li><span>M. Yokoyama, </span><span>Y. Ishigaki, </span><span><i>Identification of violin timbre by neural network using acoustic features</i>. </span><span>Proceedings of Meetings on Acoustics, </span><span>2022.</span>
+          </li>
+          <li><span>C. Fritz, </span><span>V. Salvador, </span><span>G. Stoppani, </span><span><i>The Bilbao project: searching for relationships between sound and playing properties of violins with their construction parameters</i>. </span><span>Conference on Sound Perception, </span><span>2021.</span>
+          </li>
+          <li><span>A. Buen, </span><span><i>Comparing the sound o f golden age and modern violins: long-time-average spectra</i>. </span><span>Proceedings from BNAM, </span><span>2005.</span>
+          </li>
+          <li><span>. Jansson, </span><span><i>Long-time-average-spectra applied to analysis of music</i>. </span><span>2007.</span>
+          </li>
+          <li><span>A. Gabrielsson, </span><span>. Jansson, </span><span><i>An analysis of long-time-average-spectra of twentytwo quality-rated violins</i>. </span><span>2007.</span>
+          </li>
+          <li><span>E. Lukasik, </span><span><i>Long Term Cepstral Coefficients for Violin Identification</i>. </span><span>Journal of The Audio Engineering Society, </span><span>2010.</span>
+          </li>
+          <li><span>J. McLennan, </span><span><i>The Soundpost in the Violin</i>. </span><span>2017.</span>
+          </li>
+          <li><span>R. Inta, </span><span>J. Smith, </span><span>J. Wolfe, </span><span><i>Measurement of the effect on violins of ageing and playing</i>. </span><span>2005.</span>
+          </li>
+    </ol>
+  </section>
+  <div class="break"></div>
+  <section title="Annexes">
+    <section title="Segmentation automatique">
+      <p>Le but de cette annexe est de présenter un algorithme simple (mais en pratique assez efficace) permettant de découper automatiquement un enregistrement contenant plusieurs extraits musicaux. Ceci est utile lors du traitement d'enregistrements issus d'une expérience où pour des raisons de temps il n'est pas possible d'arrêter et de relancer sans arrêt les enregistrements. Les données prennent alors la forme de plusieurs dizaines de minutes d'enregistrement, parmi lesquelles seuls les extraits contenant du violon nous intéressent.</p>
+      <p>L'idée est tout simplement de modéliser un extrait joué au violon comme un signal ayant un volume fort et maintenu dans le temps. L'algorithme se découpe alors en trois étapes :</p>
+      <ol> 
+        <li>le calcul de l'enveloppe du signal (modélisant le volume)</li>
+        <li>le calcul d'un seuil adapté (permettant de différencier les moments de silence / conversation des moments où un violon est joué)</li>
+        <li>le prolongement de ce seuillage afin d'obtenir des extraits suffisamment bien découpés</li>
+      </ol>
+      <figure> 
+        <figcaption> </figcaption><img src="figures/segmentation.png" alt="" srcset=""/>
+      </figure>
+      <section title="Enveloppe">
+        <p>L'enveloppe est calculé via le calcul de la RMS du signal, avec une fenêtre assez large afin de lisser le résultat</p>
+        <figure> 
+          <figcaption> </figcaption><img src="figures/envelope.png" alt="" srcset=""/>
+        </figure>
+      </section>
+      <section title="Seuillage">
+        <p>Afin de trouver automatiquement un seuil permettant de faire la différence entre un bruit de fond et un son de violon, l'histogramme des valeurs de la RMS du signal est analysé. Nous faisons ensuite l'hypothèse qu'il peut être décrit comme une somme de deux gaussiennes : une correspondant au bruit de fond (prenant des valeurs d'énergie moins élevées), une autre correspondant au son du violon (valeurs plus élevées).</p>
+        <figure> 
+          <figcaption> </figcaption><img src="figures/thres.png" alt="" srcset=""/>
+        </figure>
+        <p>Le seuil est alors choisi comme la moyenne entre les moyennes de ces gaussiennes.</p>
+        <figure> 
+          <figcaption> </figcaption><img src="figures/thres_2.png" alt="" srcset=""/>
+        </figure>
+      </section>
+      <section title="Prolongement et contraintes">
+        <p>Enfin, afin d'éviter que les extraits ne soient découpés trop abruptement, un prolongement est effectué à gauche et à droite de chaque extrait (tant que la dérivée de change pas de signe).</p>
+        <figure> 
+          <figcaption> </figcaption><img src="figures/prol.png" alt="" srcset=""/>
+        </figure>
+        <p>Les extraits trop courts sont éliminés, et deux extraits séparés par un temps inférieur à un certain paramètre sont fusionnés.</p>
+      </section>
+    </section>
+  </section>
+</section>

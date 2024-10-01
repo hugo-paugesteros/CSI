@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --link-visited: black;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: unset;
+    font-size: 10pt;
+    background-color: white;
+    font-family: 'EB Garamond', serif;
+}
+div.nav li {
+    margin: 0;
+    line-height: 1.3;
+}
+
+div.break, break {
+    break-before: page;
+}
+
+@page {
+    size: A4;
+    margin: 2cm;
+
+    @bottom-center {
+        font-family: 'EB Garamond', serif;
+        content: counter(page);
+        /* transform: translateY(-1em); */
+    }
+}
+
+section > * + * {
+    margin-bottom: 1em;
+}
+
+
+
+*:has(+ section) {
+    margin-bottom: 2em;
+}
+
+a:has(h1, h2, h3, h4, h5, h6){
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1em;
+    break-after: avoid;
+}
+
+figure {
+    break-inside: avoid;
+}
+
+table {
+    break-inside: avoid;
+    margin: 0 auto;
+}
+
+h1 {
+    counter-reset: h2 h3;
+}
+h2 { 
+    counter-reset: h3-v; 
+}
+h2:not(.\*) {
+    counter-reset: h3;
+    counter-increment: h2;
+
+    &::before {
+        content: counter(h2) '. ';
+    }
+}
+
+h3:not(.\*) {
+    counter-reset: h4-v;
+    counter-increment: h3-v;
+    
+    &::before {
+        content: counter(h2) '.' counter(h3-v) '. ';
+    }
+}
+
+h4 {
+    counter-reset: h5;
+    counter-increment: h4-v;
+    
+    &::before {
+        content: counter(h2) '.' counter(h3-v) '.' attr(data-counter-h4-v-value) '. ';
+    }
+}
+
+p {
+    text-align-last: left;
+}

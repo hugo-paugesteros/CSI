@@ -1,0 +1,76 @@
+section(title='Résultats')
+
+    p Dans cette section, nous présentons les résultats de la tâche de classification réalisée sur différents sous-ensembles du jeu de données. Nous comparons les résultats de chaque descripteur associé à chaque algorithme de classification. Les résultats présentés ci-dessous sont ceux obtenus après l'ajustement des hyperparamètres, qui peuvent être des hyperparamètres dans le calcul des descripteurs (fréquence d'échantillonnage, taille des fenêtres de pondération, etc.) ou des hyperparamètres de l'algorithme de classification (comme $k$ pour les K Plus Proches Voisins, par exemple).
+
+    table(style='width:100%')
+        caption Résultats en utilisant les gammes comme données d'entraînement et les extraits musicaux comme données de test
+        thead
+            tr
+                th Méthode
+                th Descripteur
+                th Entraînement
+                th Test
+        tbody
+                tr
+                    td(rowspan="3") K-NN
+                    td LTAS
+                    td 100%
+                    td 66%
+                tr
+                    td LTCC
+                    td 100%
+                    td 66%
+                tr
+                    td MFCC
+                    td 100%
+                    td 95%
+                tr
+                    td(rowspan="3") SVM
+                    td LTAS
+                    td 99%
+                    td 83%
+                tr
+                    td LTCC
+                    td 99%
+                    td 100%
+                tr
+                    td MFCC
+                    td 98%
+                    td 92%
+                tr
+                    td(rowspan="3") MLP
+                    td LTAS
+                    td 38%
+                    td 54%
+                tr
+                    td LTCC
+                    td 99%
+                    td 83%
+                tr
+                    td MFCC
+                    td 99%
+                    td 92%
+
+
+    //- table(style='width:100%')
+    //-     caption Résultats en utilisant les gammes comme données d'entraînement et les extraits musicaux comme données de test
+    //-     thead
+    //-         tr
+    //-             th Méthode
+    //-             th Descripteur
+    //-             th Entraînement
+    //-             th Test
+    //-     tbody
+    //-             tr
+    //-                 td(rowspan=3) K-NN
+    //-                 td LTAS
+    //-                 td 100%
+    //-                 td 38%
+    //-             tr
+    //-                 td LTCC
+    //-                 td 100%
+    //-                 td 76%
+    //-             tr
+    //-                 td MFCC
+    //-                 td 100%
+    //-                 td 83%

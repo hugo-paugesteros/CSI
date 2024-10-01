@@ -1,0 +1,184 @@
+section(title='Méthodologie')
+
+    section(title='Base de données')
+
+        p Dans le cadre du projet Bilbao, treize violons ont été fabriqués afin d'établir une relation entre leurs caractéristiques matérielles et géométriques et leur qualité tonale #{cite('fritz2021')}. Ces violons ont été joués en 2019 par vingt-trois violonistes professionnels, chacun ayant enregistré une gamme sur chaque violon ainsi qu'un court extrait musical sur un violon de leur choix. Les enregistrements ont été réalisés dans des conditions identiques, dans une grande salle de répétition du conservatoire de Bilbao, en maintenant une distance constante entre le musicien et le microphone. Notre ensemble de données se compose ainsi de $13 \times 23$ gammes, plus $1 \times 23$ extraits musicaux.
+
+        figure
+            img(src="../identification/figures/class_weights.png", alt="")
+            figcaption Temps d'enregistrement disponible par violoniste et par violon.
+        
+        p Six de ces treize violons (violons numéros 1, 4, 5, 9, 11 et 13) ont été apportés au workshop de Villfavard en 2024 et ont été enregistrés à nouveau. Ils ont été joués librement par quatre nouveaux musiciens dans une petite salle, dans des conditions assez différentes de celles des enregistrements de 2019.
+
+        figure
+            img(src="../identification/figures/class_weights_2024.png", alt="")
+            figcaption Temps d'enregistrement disponible par violoniste et par violon.
+
+    section(title='Descripteurs audio')
+
+        p Les descripteurs suivants ont été comparés lors de la classification :
+
+        section(title='Long Time Average Spectra (LTAS)')
+
+            p Le #[i Long-Time Average Spectra] (LTAS) d'un enregistrement est obtenu en divisant le signal d'entrée en segments superposés, puis en calculant la DFT (transformée de Fourier discrète) fenêtrée de chaque segment, et enfin en moyennant la puissance de ces DFTs.
+
+            figure 
+                <svg width="600" height="100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="45" y="50" font-size="12" text-anchor="middle">Signal</text>
+
+                    <rect x="100" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="135" y="50" font-size="12" text-anchor="middle">Window</text>
+
+                    <rect x="190" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="225" y="50" font-size="12" text-anchor="middle">DFT</text>
+
+                    <rect x="280" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="315" y="50" font-size="12" text-anchor="middle">|⋅|²</text>
+
+                    <rect x="370" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="405" y="50" font-size="12" text-anchor="middle">Average</text>
+
+                    <rect x="460" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="495" y="50" font-size="12" text-anchor="middle">LTAS</text>
+
+                    <line x1="80" y1="45" x2="90" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="170" y1="45" x2="180" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="260" y1="45" x2="270" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="350" y1="45" x2="360" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="440" y1="45" x2="450" y2="45" stroke="black" marker-end="url(#arrow)"/>
+
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="black"/>
+                        </marker>
+                    </defs>
+                </svg>
+
+            p Le LTAS a été utilisé dans #{cite('buen2005', 'jansson2007', 'gabrielsson2007')} afin de comparer la qualité tonale des violons. Plus précisément, le son des violons italiens anciens (Stradivari/Guarneri) et des violons modernes a été comparé. L'auteur conclut que des différences entre ces deux groupes peuvent être mises en évidence en utilisant le LTAS.
+        
+        section(title='Mel-Frenquency Cepstral Coefficients (MFCC)')
+
+            p Les MFCCs sont obtenus en calculant en projetant les fréquences d'un spectres sur une échelle Mel (une échelle perceptuelle constituée de hauteurs jugées équidistantes par des auditeur⋅ices), en prenant le logarithme, puis en calculant la DCT (Transformée en Cosinus Discrète) du résultat.
+
+            p Comme ici nous nous intéressons à des caractéristiques ayant une signification à long terme (on cherche une signature sonore d'un violon), un LTAS a été utilisé comme base du calcul des MFCCs. Il s'agit alors d'une version à temps long des MFCCs classiques.
+
+            figure
+                <svg width="600" height="100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="45" y="50" font-size="12" text-anchor="middle">Signal</text>
+
+                    <rect x="100" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="135" y="50" font-size="12" text-anchor="middle">LTAS</text>
+
+                    <rect x="190" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="225" y="40" font-size="12" text-anchor="middle">Mel</text>
+                    <text x="225" y="55" font-size="12" text-anchor="middle">Filter</text>
+
+                    <rect x="280" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="315" y="50" font-size="12" text-anchor="middle">Log</text>
+
+                    <rect x="370" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="405" y="50" font-size="12" text-anchor="middle">DCT</text>
+
+                    <rect x="460" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="495" y="50" font-size="12" text-anchor="middle">MFCC</text>
+
+                    <line x1="80" y1="45" x2="90" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="170" y1="45" x2="180" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="260" y1="45" x2="270" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="350" y1="45" x2="360" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="440" y1="45" x2="450" y2="45" stroke="black" marker-end="url(#arrow)"/>
+
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="black"/>
+                        </marker>
+                    </defs>
+                </svg>
+
+            p Les MFCCs sont des descripteurs qui ont été largement utilisés pour la reconnaissance automatique des locuteurs et pour la classification des instruments.
+
+        section(title='Long-Term Cepstral Coefficients (LTCC)')
+
+            p Les LTCCs ont été introduits dans #{cite('lukasik2010')} pour l'identification individuelle d'instruments. Leur calcul est similaire à celui des MFCCs, sauf que la projection sur l'échelle Mel n'est pas appliquée et que l'étape finale est constituée d'une transformée de Fourier discrète inverse (iDFT).
+
+            figure
+                <svg width="500" height="100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="45" y="50" font-size="12" text-anchor="middle">Signal</text>
+
+                    <rect x="100" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="135" y="50" font-size="12" text-anchor="middle">LTAS</text>
+
+                    <rect x="190" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="225" y="50" font-size="12" text-anchor="middle">Log</text>
+
+                    <rect x="280" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="315" y="50" font-size="12" text-anchor="middle">iDFT</text>
+
+                    <rect x="370" y="30" width="70" height="30" fill="none" stroke="black"/>
+                    <text x="405" y="50" font-size="12" text-anchor="middle">LTCC</text>
+
+                    <line x1="80" y1="45" x2="90" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="170" y1="45" x2="180" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="260" y1="45" x2="270" y2="45" stroke="black" marker-end="url(#arrow)"/>
+                    <line x1="350" y1="45" x2="360" y2="45" stroke="black" marker-end="url(#arrow)"/>
+
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="black"/>
+                        </marker>
+                    </defs>
+                </svg>
+
+        section(title='Exploration des données')
+
+            section(title='Variabilité des LTAS')
+
+                p Un paramètre majeur intervenant lors du calcul du LTAS est la durée de l'extrait sur lequel calculer ce spectre moyen. La figure ci-dessous montre la variabilité de ce calcul pour quatre durées d'extraits pour un même violon :
+
+                figure 
+                    figcaption Moyennes (traits pleins) et écarts-types (fond transparent) des LTAS d'un même violon en fonction de la durée de l'extrait choisi
+                    img(src="/home/hugo/Thèse/identification/figures/ltas_length.png", alt="", srcset="")
+
+                p Nous remarquons que la variance des LTAS des extraits d'une seconde est beaucoup plus forte que pour les autres durées. De plus, il ne semble pas y avoir d'énormes différences de variances entre les durées au delà de 10 secondes. Ceci indique que la variabilité des LTAS atteint une certaine stabilité dès que nous considérons des extraits d'une durée de quelques dizaines de secondes. Par la suite, les LTAS seront donc calculés en considérant des extraits de cet ordre de grandeur.
+
+            section(title='Sélection des descripteurs')
+
+                p Il est possible de lancer des algorithmes de sélection de descripteurs afin de voir quels coefficients discriminent le mieux les violons.
+
+                figure 
+                    img(src="/home/hugo/Thèse/identification/figures/ltas.png", alt="", srcset="")
+                    figcaption LTAS des violons (au-dessus) et meilleurs coefficients sélectionnés par l'algorithme.
+
+                figure 
+                    img(src="/home/hugo/Thèse/identification/figures/mfcc_select.png", alt="", srcset="")
+                    figcaption MFCCs des violons (au-dessus) et meilleurs coefficients sélectionnés par l'algorithme.
+
+                figure 
+                    img(src="/home/hugo/Thèse/identification/figures/ltcc_select.png", alt="", srcset="")
+                    figcaption LTCCs des violons (au-dessus) et meilleurs coefficients sélectionnés par l'algorithme.
+
+                p Certains coefficients semblent plus discriminants que d'autres quant à la reconnaissance de violons à partir de leur enregistrement. En particulier, sur la figure relative aux LTAS, il est possible de voir quelles zones fréquentielles sont les plus discriminantes. Ainsi, nous pouvons remarquer que la zone autour de 800 Hz est beaucoup plus discriminante que la zone 250-600 Hz, qui est pourtant celle beaucoup regardée par les luthiers.
+                
+                //- il est possible de voir quels modes du violon sont les plus discriminants. Nous remarquons que le mode A0 (autour de 300Hz) ne l'est pas beaucoup, tandis qu'entre les modes B1- et B1+ (les deux pics autour de 500Hz), le premier semble avoir un meilleur pouvoir de différenciation.
+
+
+        section(title='Classification')
+
+            p Nous comparons les résultats de trois algorithmes de classification parmi les plus populaires : les K Plus Proches Voisins, les Machines à Vecteurs de Support et le Perceptron Multicouche. Ces trois algorithmes utilisent différentes stratégies d'apprentissage et donneront ainsi des résultats différents sur nos données.
+
+            section(title='K-Nearest Neighbours')
+
+                p Les K Plus Proches Voisins est une méthode qui trouve les points d'entraînement les plus proches d'un nouveau point de test et prédit sa classe à partir de ceux-ci. Étant donné que la prédiction est effectuée directement à partir des données d'entraînement, cette méthode est non paramétrique (ou non généralisante), ce qui est un avantage lorsque la frontière de décision est irrégulière.
+
+            section(title='Support Vector Machines')
+
+                p Les Machines à Vecteurs de Support sont une méthode d'apprentissage supervisé utilisée pour la classification. Elles fonctionnent en trouvant un hyperplan optimal qui maximise la distance entre chaque classe dans les données d'entraînement. Cet algorithme est coûteux en termes de calcul, mais possède généralement de bonnes propriétés de généralisation.
+
+            section(title='Multilayer Perceptron')
+
+                p Le perceptron multicouche est une méthode d'apprentissage supervisé qui apprend une fonction $f : \mathbb{R}^n \to \mathbb{R}^o$ à l'aide de données d'entraînement. Pour ce faire, il utilise des couches de neurones : chaque neurone transforme le résultat de la couche précédente en formant une sommation linéaire pondérée $w_0 + w_1 x_1 + \dots + w_n x_n$, suivie d'une fonction d'activation non linéaire.
+
+                p Cette méthode a montré son efficacité dans divers domaines, car les fonctions d'activation non linéaires peuvent modéliser des relations complexes dans les données, tandis que les couches cachées peuvent apprendre des représentations hiérarchiques à partir des données d'entrée. Cependant, les perceptrons multicouches sont sujets au surapprentissage, en particulier sur de petits ensembles de données.

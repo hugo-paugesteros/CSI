@@ -1,0 +1,656 @@
+[
+	{
+		"id": "lukasikLongTermCepstral2010b",
+		"type": "article-journal",
+		"abstract": "Cepstral coefficients in mel scale proved to be efficient features for speaker and musical instrument recognition. In this paper Long Term Cepstral Coefficients  LTCCs  of solo musical phrases are used as features for identification of individual violins. LTCC represents the envelope of LTAS  Long Term Average Spectrum in linear scale useful to characterize the subtleties of violin sound in frequency domain. Results of the classification of 60 instruments are presented and discussed. It was shown, that if the experts knowledge is applied to analyze violin sound, the results may be promising.",
+		"container-title": "Journal of The Audio Engineering Society",
+		"source": "Semantic Scholar",
+		"title": "Long Term Cepstral Coefficients for Violin Identification",
+		"URL": "https://www.semanticscholar.org/paper/Long-Term-Cepstral-Coefficients-for-Violin-Lukasik/1078124310e55d7f734e2cead68f0d1ad7ccf511",
+		"author": [
+			{
+				"family": "Lukasik",
+				"given": "E."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					4,
+					24
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2010",
+					5,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "setragnoFeatureBasedTimbralCharacterization2017",
+		"type": "paper-conference",
+		"abstract": "Violin timbre is a very complex case of study. The sound properties that distinguish an historical violin from a modern one are still not clear. The purpose of this study is to understand what are these properties, by means of feature-based analysis. We extract audio features related to timbre and we exploit feature selection techniques in order to investigate what are the most characterizing ones. We compare different feature selection algorithms and we illustrate how we applied their outcome to a classification task with historical and modern instruments. Results show that the classification performance improves when using the selected features.",
+		"source": "Semantic Scholar",
+		"title": "Feature-Based Timbral Characterization of Historical and Modern Violins",
+		"URL": "https://www.semanticscholar.org/paper/Feature-Based-Timbral-Characterization-of-and-Setragno-Zanoni/84971ffe04917aada0de142400b5333ed01f5f95",
+		"author": [
+			{
+				"family": "Setragno",
+				"given": "F."
+			},
+			{
+				"family": "Zanoni",
+				"given": "M."
+			},
+			{
+				"family": "Antonacci",
+				"given": "F."
+			},
+			{
+				"family": "Sarti",
+				"given": "A."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					4,
+					24
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "wangIndividualViolinRecognition2020a",
+		"type": "article-journal",
+		"abstract": "Individual recognition among instruments of the same type is a challenging problem and it has been rarely investigated. In this study, the individual recognition of violins is explored. Based on the source–filter model, the spectrum can be divided into tonal content and nontonal content, which reflects the timbre from complementary aspects. The tonal/nontonal gammatone frequency cepstral coefficients (GFCC) are combined to describe the corresponding spectrum contents in this study. In the recognition system, Gaussian mixture models–universal background model (GMM–UBM) is employed to parameterize the distribution of the combined features. In order to evaluate the recognition task of violin individuals, a solo dataset including 86 violins is developed in this study. Compared with other features, the combined features show a better performance in both individual violin recognition and violin grade classification. Experimental results also show the GMM–UBM outperforms the CNN, especially when the training data are limited. Finally, the effect of players on the individual violin recognition is investigated.",
+		"container-title": "Electronics",
+		"DOI": "10.3390/electronics9060950",
+		"ISSN": "2079-9292",
+		"issue": "6",
+		"journalAbbreviation": "Electronics",
+		"language": "en",
+		"license": "https://creativecommons.org/licenses/by/4.0/",
+		"page": "950",
+		"source": "Semantic Scholar",
+		"title": "Individual Violin Recognition Method Combining Tonal and Nontonal Features",
+		"URL": "https://www.mdpi.com/2079-9292/9/6/950",
+		"volume": "9",
+		"author": [
+			{
+				"family": "Wang",
+				"given": "Qi"
+			},
+			{
+				"family": "Bao",
+				"given": "Changchun"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					4,
+					24
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					6,
+					8
+				]
+			]
+		}
+	},
+	{
+		"id": "zhaoViolinistIdentificationUsing2022",
+		"type": "article-journal",
+		"abstract": "Modelling musical performers’ individual playing styles based on audio features is important for music education, music expression analysis and music generation. In violin performance, the perception of playing styles are mainly affected by the characteristic musical timbre, which is mostly determined by performers, instruments and recording conditions. To verify if timbre features can describe a performer’s style adequately, we examine a violinist identification method based on note-level timbre feature distributions. We first apply it using solo datasets to recognise professional violinists, then use it to identify master players from commercial concerto recordings. The results show that the designed features and method work very well for both datasets. The identification accuracy with the solo dataset using MFCCs and spectral constrast features are 0.94 and 0.91 respectively. Significantly lower but promising results are reported with the concerto dataset. Results suggest that the selected timbre features can model performers’ individual playing reasonably objectively, regardless of the instrument they play.",
+		"container-title": "ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+		"DOI": "10.1109/ICASSP43922.2022.9747606",
+		"license": "https://doi.org/10.15223/policy-029",
+		"note": "event-title: ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)\nISBN: 9781665405409\npublisher-place: Singapore, Singapore\npublisher: IEEE",
+		"page": "601-605",
+		"source": "Semantic Scholar",
+		"title": "Violinist Identification Using Note-Level Timbre Feature Distributions",
+		"URL": "https://ieeexplore.ieee.org/document/9747606/",
+		"author": [
+			{
+				"family": "Zhao",
+				"given": "Yudong"
+			},
+			{
+				"family": "Fazekas",
+				"given": "Gyorgy"
+			},
+			{
+				"family": "Sandler",
+				"given": "Mark"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					4,
+					24
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2022",
+					5,
+					23
+				]
+			]
+		}
+	},
+	{
+		"id": "yokoyamaIdentificationViolinTimbre2022a",
+		"type": "article-journal",
+		"abstract": "The timbre of violins is identified using machine learning, and a computer program is developed for the neural network using Python and Keras libraries. The 21 violins recorded include old Italian violins made by Stradivari and contemporary violins. The training and test data use the spectrum envelope and Mel-frequency cepstrum coefficients (MFCC). The accuracy of the identification test in the case of open strings is greater than 90%. Furthermore, experiments that predict similarity in timbre of an unknown violin to that of trained violins are presented.",
+		"container-title": "Proceedings of Meetings on Acoustics",
+		"DOI": "10.1121/2.0001659",
+		"ISSN": "1939-800X",
+		"issue": "1",
+		"journalAbbreviation": "Proceedings of Meetings on Acoustics",
+		"page": "035004",
+		"source": "Silverchair",
+		"title": "Identification of violin timbre by neural network using acoustic features",
+		"URL": "https://doi.org/10.1121/2.0001659",
+		"volume": "49",
+		"author": [
+			{
+				"family": "Yokoyama",
+				"given": "Masao"
+			},
+			{
+				"family": "Ishigaki",
+				"given": "Yuya"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					4,
+					24
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2022",
+					12,
+					22
+				]
+			]
+		}
+	},
+	{
+		"id": "eronenMusicalInstrumentRecognition2000",
+		"type": "paper-conference",
+		"abstract": "In this paper, a system for pitch independent musical instrument recognition is presented. A wide set of features covering both spectral and temporal properties of sounds was investigated, and their extraction algorithms were designed. The usefulness of the features was validated using test data that consisted of 1498 samples covering the full pitch ranges of 30 orchestral instruments from the string, brass and woodwind families, played with different techniques. The correct instrument family was recognized with 94% accuracy and individual instruments in 80% of cases. These results are compared to those reported in other work. Also, utilization of a hierarchical classification framework is considered.",
+		"container-title": "2000 IEEE International Conference on Acoustics, Speech, and Signal Processing. Proceedings (Cat. No.00CH37100)",
+		"DOI": "10.1109/ICASSP.2000.859069",
+		"event-title": "2000 IEEE International Conference on Acoustics, Speech, and Signal Processing. Proceedings (Cat. No.00CH37100)",
+		"note": "ISSN: 1520-6149",
+		"page": "II753-II756 vol.2",
+		"source": "IEEE Xplore",
+		"title": "Musical instrument recognition using cepstral coefficients and temporal features",
+		"URL": "https://ieeexplore.ieee.org/document/859069",
+		"volume": "2",
+		"author": [
+			{
+				"family": "Eronen",
+				"given": "A."
+			},
+			{
+				"family": "Klapuri",
+				"given": "A."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					5,
+					7
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2000",
+					6
+				]
+			]
+		}
+	},
+	{
+		"id": "martinMusicalInstrumentIdentification1998",
+		"type": "article-journal",
+		"abstract": "A statistical pattern-recognition technique was applied to the classification of musical instrument tones within a taxonomic hierarchy. Perceptually salient acoustic features—related to the physical properties of source excitation and resonance structure—were measured from the output of an auditory model (the log-lag correlogram) for 1023 isolated tones over the full pitch ranges of 15 orchestral instruments. The data set included examples from the string (bowed and plucked), woodwind (single, double, and air reed), and brass families. Using 70%/30% splits between training and test data, maximum a posteriori classifiers were constructed based on Gaussian models arrived at through Fisher multiple-discriminant analysis. The classifiers distinguished transient from continuant tones with approximately 99% correct performance. Instrument families were identified with approximately 90% performance, and individual instruments were identified with an overall success rate of approximately 70%. These preliminary analyses compare favorably with human performance on the same task and demonstrate the utility of the hierarchical approach to classification.",
+		"container-title": "The Journal of the Acoustical Society of America",
+		"DOI": "10.1121/1.424083",
+		"ISSN": "0001-4966, 1520-8524",
+		"issue": "3_Supplement",
+		"language": "en",
+		"page": "1768-1768",
+		"source": "Semantic Scholar",
+		"title": "Musical instrument identification: A pattern-recognition approach",
+		"title-short": "Musical instrument identification",
+		"URL": "https://pubs.aip.org/jasa/article/104/3_Supplement/1768/558739/Musical-instrument-identification-A-pattern",
+		"volume": "104",
+		"author": [
+			{
+				"family": "Martin",
+				"given": "Keith D."
+			},
+			{
+				"family": "Kim",
+				"given": "Youngmoo E."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					5,
+					7
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"1998",
+					9,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "lukasikAMATIMultimediaDatabase2003",
+		"type": "paper-conference",
+		"source": "ResearchGate",
+		"title": "AMATI - Multimedia Database of Violin Sounds",
+		"author": [
+			{
+				"family": "Lukasik",
+				"given": "Ewa"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2003",
+					1,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "yokoyamaPossibilityDistinctionViolin2020",
+		"type": "article-journal",
+		"abstract": "In this study, the sounds of violins, performed by a violinist, were recorded and the distribution of peak frequencies of the spectral envelope of the recorded sound data was analyzed. The distribution of peak frequencies is different for each violin, but some tendencies were found. Questionnaires were used to examine the distinction in violin timbre by the difference in the patterns of peak frequencies. When the patterns of the two violins were similar, the subjects responded that the timbre of both violins was similar than the other violin whose pattern of peak frequencies was different. The present study discussed the contribution of the similarity of patterns and the difference between patterns to the identification of the timbre.",
+		"container-title": "Applied Acoustics",
+		"DOI": "10.1016/j.apacoust.2019.107006",
+		"ISSN": "0003-682X",
+		"journalAbbreviation": "Applied Acoustics",
+		"page": "107006",
+		"source": "ScienceDirect",
+		"title": "Possibility of distinction of violin timbre by spectral envelope",
+		"URL": "https://www.sciencedirect.com/science/article/pii/S0003682X19302403",
+		"volume": "157",
+		"author": [
+			{
+				"family": "Yokoyama",
+				"given": "Masao"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					5,
+					22
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					1,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "gonzalezMachineLearningApproach",
+		"type": "article-journal",
+		"language": "en",
+		"source": "Zotero",
+		"title": "A machine learning approach to violin timbre quality classiﬁcation",
+		"author": [
+			{
+				"family": "González",
+				"given": "Pedro Lladó"
+			}
+		]
+	},
+	{
+		"id": "zanoniPredictionViolinTimbre2017",
+		"type": "article-journal",
+		"abstract": "This contribution investigates on the acoustics of violin, and more speciﬁcally on the relationship existing between vibrational impulse responses and the timbre of the instrument. With respect to previous publications on this topic, we tackle the problem using a feature-based approach. More speciﬁcally, we aim at ﬁnding the correlation between the features extracted from accelerometric measurements of the bridge mobility and from audio recordings of a prescribed set of performances. Results demonstrate that features describing to the global shape of the spectrum are strongly related. On these descriptors we also show the possibility of predicting the features of audio recordings from the vibrational ones. Experimental data are based on a set of 25 modern violins.",
+		"language": "en",
+		"source": "Zotero",
+		"title": "Towards Prediction of Violin Timbre from Vibrational Measurements",
+		"author": [
+			{
+				"family": "Zanoni",
+				"given": "Massimiliano"
+			},
+			{
+				"family": "Antonacci",
+				"given": "Fabio"
+			},
+			{
+				"family": "Sarti",
+				"given": "Augusto"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "fritzBilbaoProjectSearching2021",
+		"type": "paper-conference",
+		"abstract": "The Bilbao project aimed at relating intrinsic characteristics of the materials (wood density and stiffness) and some geometric characteristics of the violin's constituent part (thicknesses of the plates) with the tonal qualities of the complete violins. To this end, six instruments were carefully built at the Bilbao making school: three instruments with normal backs, each paired with a pliant (thin), normal or resistant (thick) top; similarly, three with normal tops, each paired with a pliant, normal or resistant back. The two examples of normal top paired with normal back serve as a control. Wood for tops and backs were closely matched in density and sound speeds-all tops and backs from the same trees. Greater control was achieved by having all plates and scrolls cut by CNC routers, using the Huberman Stradivari model. The outside surface was not changed as the graduation was performed entirely on the inside surface. In addition, another six instruments were built by six established makers, following a similar procedure but with less constraints on the choice of wood (not the same trees as for the Bilbao set though a similar density was imposed) and on the graduation of the routed plates which was left totally free (but ended in the same range of thicknesses). Finally, another violin built with a very different profile but made by one of the established maker was added to the pool as an outlier. These thirteen violins were then evaluated by twenty players during a free categorisation task and by about 70 listeners (31 violin makers, 26 bow players and 15 others) during a listening test in the Bilbao conservatory auditorium. The tests show very large differences in terms of timbre, playability and volume between the violins, and these differences will be discussed in the light of their construction parameters.",
+		"event-title": "Conference on Sound Perception",
+		"language": "en",
+		"source": "hal-sfo.ccsd.cnrs.fr",
+		"title": "The Bilbao project: searching for relationships between sound and playing properties of violins with their construction parameters",
+		"title-short": "The Bilbao project",
+		"URL": "https://hal.science/hal-03446713",
+		"author": [
+			{
+				"family": "Fritz",
+				"given": "Claudia"
+			},
+			{
+				"family": "Salvador",
+				"given": "Víctor"
+			},
+			{
+				"family": "Stoppani",
+				"given": "George"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					6,
+					14
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2021",
+					9,
+					3
+				]
+			]
+		}
+	},
+	{
+		"id": "buenCOMPARINGSOUNDGOLDEN2005",
+		"type": "article-journal",
+		"abstract": "Recordings of the sound spectra produced by violins made by Antonio Stradivari (1 5), Giuseppe Guameri del Gesu (1 5), and 18 contemporary makers were analyzed and compared In general, the sound produced by the 30 violins crafted by the two great Italian masters is very strong in the region from about C#q to G4 (274 to 41 0 Hz) and signij7cantly stronger in the highrfiequency regionfrom to G7 (2901 to 3073 Hz) and from B, to G#8 (3868 to 6494 Hz). The particular group of modem violins we ana-lyzed had relatively equal or stronger fundamentals at very low notes below Cq (<260 Hz), in the mid-frequency region A4 to F, (440 to 2793 Hz), and at very high frequencies (>6.5 H z) . Overall, the sound produced by the violins of Stradivari and Guameri was darker, less nasal, somewhat stronger in the high-brightness region, and possibly less sharp than was typical of the modem violins.",
+		"source": "ResearchGate",
+		"title": "COMPARING THE SOUND O F GOLDEN AGE AND MODERN VIOLINS: LONG-TIME-AVERAGE SPECTRA",
+		"title-short": "COMPARING THE SOUND O F GOLDEN AGE AND MODERN VIOLINS",
+		"author": [
+			{
+				"family": "Buen",
+				"given": "Anders"
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2005",
+					7,
+					1
+				]
+			]
+		}
+	},
+	{
+		"id": "moralLongtimeaveragespectraScalesSpectra2007",
+		"type": "paper-conference",
+		"abstract": "Long-Time-Average-Spectra, LTAS:es, have proved to give representative records of violins. The fulltime scales recorded in a reverberation chamber have, however, not been well suited for listening tests. Therefore in this investigation the recordings were made in an anechoic chamber and the effects on the LTAS by reducing the number of tones played were tried. Furthermore, the relations were investigated between Single-Tone -Spectra, STS :es, and LTAS:es. The investigations show that a representative LTAS of a violin can be obtained from every third tone on the two middle strings. Furthermore, i t shows that the spectrum level of all strings a r e approximately equal to 12 Bark and thereafter it drops 4 dB from a string to the next lower and that the high frequency limit of each string drops one Bark from one string to the next lower string. The levels of the STS:es fall in general within f 5 dB of the LTAS of the same string.",
+		"source": "Semantic Scholar",
+		"title": "Long-time-average-spectra of scales and spectra of single tones from a violin",
+		"URL": "https://www.semanticscholar.org/paper/Long-time-average-spectra-of-scales-and-spectra-of-Moral/a3ae4ee2b9a853d368e9e39f9108a9b40c37e017",
+		"author": [
+			{
+				"family": "Moral",
+				"given": "A."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					7,
+					15
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2007"
+				]
+			]
+		}
+	},
+	{
+		"id": "gabrielssonAnalysisLongtimeaveragespectraTwentytwo2007",
+		"type": "paper-conference",
+		"abstract": "LongTime-Average-Spectra (L TAS:es) were recorded of 22 qualityrated violins. The LTAS:es were analyzed by four different methods: weight functions, factor analysis (FA), multidimensional scaling (MDS), and separate correlation analysis. The average difference between the instruments rated highest and lowest was t r ied a s a function weighting tonal quality. This weight function explained 64 70 of the variance of the tonal quality-ratings. Factor analysis and multidimensional scaling in five factor s/dimensions gave approximately the same solutions. The solutions accounted for 74 70 and 44 ' $0 respec t ive ly of the variance of the LTAS:es and for 74 70 and 69 70 respectively of the variance of the tonal quality-ratings. The variations in certain res t r ic ted frequency regions selected by correlation analysis accounted for 7 1-84 70 of the variance in the tonal quality-ratings. The different methods imply that \"strong\" f r e quency components a r e favorable in a low frequency region and in a middle high frequency region, while \"weak\" frequency components a r e favorable in a high frequency region and in a l imited middle frequency region. The resu l t s seem reliable, a t l eas t for the selected instruments.",
+		"source": "Semantic Scholar",
+		"title": "An analysis of long-time-average-spectra of twentytwo quality-rated violins",
+		"URL": "https://www.semanticscholar.org/paper/An-analysis-of-long-time-average-spectra-of-violins-Gabrielsson-Jansson/786c0e0b14dd4d005e4b15786936c5070d80dc0b",
+		"author": [
+			{
+				"family": "Gabrielsson",
+				"given": "A."
+			},
+			{
+				"family": "Jansson",
+				"given": ""
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					7,
+					15
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2007"
+				]
+			]
+		}
+	},
+	{
+		"id": "janssonLongtimeaveragespectraAppliedAnalysis2007a",
+		"type": "paper-conference",
+		"abstract": "Semantic Scholar extracted view of \"Long-time-average-spectra applied to analysis of music\" by Jansson",
+		"source": "Semantic Scholar",
+		"title": "Long-time-average-spectra applied to analysis of music",
+		"URL": "https://www.semanticscholar.org/paper/Long-time-average-spectra-applied-to-analysis-of-Jansson/71befcd4282e07f079db20b2b33e160b33dfcd0c",
+		"author": [
+			{
+				"family": "Jansson",
+				"given": ""
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					7,
+					15
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2007"
+				]
+			]
+		}
+	},
+	{
+		"id": "muckenhirnLongTermSpectralStatistics2017",
+		"type": "article-journal",
+		"abstract": "Automatic speaker veriﬁcation systems can be spoofed through recorded, synthetic or voice converted speech of target speakers. To make these systems practically viable, the detection of such attacks, referred to as presentation attacks, is of paramount interest. In that direction, this paper investigates two aspects: (a) a novel approach to detect presentation attacks where, unlike conventional approaches, no speech signal modeling related assumptions are made, rather the attacks are detected by computing ﬁrst order and second order spectral statistics and feeding them to a classiﬁer, and (b) generalization of the presentation attack detection systems across databases. Our investigations on ASVspoof 2015 challenge database and AVspoof database show that, when compared to the approaches based on conventional short-term spectral features, the proposed approach with a linear discriminative classiﬁer yields a better system, irrespective of whether the spoofed signal is replayed to the microphone or is directly injected into the system software process. Cross-database investigations show that neither the short-term spectral processing based approaches nor the proposed approach yield systems which are able to generalize across databases or methods of attack. Thus, revealing the difﬁculty of the problem and the need for further resources and research.",
+		"container-title": "IEEE/ACM Transactions on Audio, Speech, and Language Processing",
+		"DOI": "10.1109/TASLP.2017.2743340",
+		"ISSN": "2329-9290, 2329-9304",
+		"issue": "11",
+		"journalAbbreviation": "IEEE/ACM Trans. Audio Speech Lang. Process.",
+		"language": "en",
+		"license": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html",
+		"page": "2098-2111",
+		"source": "DOI.org (Crossref)",
+		"title": "Long-Term Spectral Statistics for Voice Presentation Attack Detection",
+		"URL": "http://ieeexplore.ieee.org/document/8015145/",
+		"volume": "25",
+		"author": [
+			{
+				"family": "Muckenhirn",
+				"given": "Hannah"
+			},
+			{
+				"family": "Korshunov",
+				"given": "Pavel"
+			},
+			{
+				"family": "Magimai-Doss",
+				"given": "Mathew"
+			},
+			{
+				"family": "Marcel",
+				"given": "Sebastien"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					8,
+					30
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2017",
+					11
+				]
+			]
+		}
+	},
+	{
+		"id": "essidMusicalInstrumentRecognition2006",
+		"type": "article-journal",
+		"abstract": "Musical instrument recognition is an important aspect of music information retrieval. In this paper, statistical pattern recognition techniques are utilized to tackle the problem in the context of solo musical phrases. Ten instrument classes from different instrument families are considered. A large sound database is collected from excerpts of musical phrases acquired from commercial recordings translating different instrument instances, performers, and recording conditions. More than 150 signal processing features are studied including new descriptors. Two feature selection techniques, inertia ratio maximization with feature space projection and genetic algorithms are considered in a class pairwise manner whereby the most relevant features are fetched for each instrument pair. For the classiﬁcation task, experimental results are provided using Gaussian mixture models (GMMs) and support vector machines (SVMs). It is shown that higher recognition rates can be reached with pairwise optimized subsets of features in association with SVM classiﬁcation using a radial basis function kernel.",
+		"container-title": "IEEE Transactions on Audio, Speech and Language Processing",
+		"DOI": "10.1109/TSA.2005.860842",
+		"ISSN": "1558-7916",
+		"issue": "4",
+		"journalAbbreviation": "IEEE Trans. Audio Speech Lang. Process.",
+		"language": "en",
+		"license": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html",
+		"page": "1401-1412",
+		"source": "DOI.org (Crossref)",
+		"title": "Musical instrument recognition by pairwise classification strategies",
+		"URL": "http://ieeexplore.ieee.org/document/1643665/",
+		"volume": "14",
+		"author": [
+			{
+				"family": "Essid",
+				"given": "S."
+			},
+			{
+				"family": "Richard",
+				"given": "G."
+			},
+			{
+				"family": "David",
+				"given": "B."
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2024",
+					8,
+					30
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2006",
+					7
+				]
+			]
+		}
+	}
+]
